@@ -1,0 +1,9 @@
+{
+  "name": "sfec_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.33.0"
+  }
+}
