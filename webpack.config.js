@@ -34,12 +34,30 @@ module.exports = {
         ]
       },
       {
+        test: /\.css$/,
+        use:  [  
+            'style-loader', 
+            MiniCssExtractPlugin.loader, 
+            'css-loader'
+        ]
+      },
+      {
         test: /\.(jpg|png|svg)$/,
         loader: 'file-loader',
         options: {
             name: 'images/[name].[ext]'
         },
       },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }]
+      }
     ]
   },
   plugins: [ 
@@ -54,22 +72,6 @@ module.exports = {
         filename: 'index.html'
     }),
     new WebpackMd5Hash(),
-    /*new FaviconsWebpackPlugin({
-      logo: './src/logo.svg',
-      title: 'Homepage',
-      icons: {
-        android: false,
-        appleIcon: false,
-        appleStartup: false,
-        coast: false,
-        favicons: true,
-        firefox: false,
-        opengraph: false,
-        twitter: false,
-        yandex: false,
-        windows: false
-      }
-    })*/
     new FaviconsWebpackPlugin({
       logo:'./src/logo.png',
       icons: {
