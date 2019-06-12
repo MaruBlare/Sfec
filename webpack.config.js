@@ -1,10 +1,12 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+
 
 module.exports = {
   entry: {
@@ -25,13 +27,13 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader, 
-          'css-loader',
-          'postcss-loader', 
-          'sass-loader',
-        ],
+        use:[
+          { loader: 'style-loader',}, 
+          { loader: MiniCssExtractPlugin.loader,}, 
+          { loader: 'css-loader', }, 
+          { loader: 'postcss-loader',}, 
+          { loader: 'sass-loader' }
+        ]
       },
       {
         test: /\.(jpg|png|svg)$/,
@@ -75,7 +77,11 @@ module.exports = {
         windows: false
       }
     }),
-
+    new webpack.ProvidePlugin({
+      '$': "jquery",
+      'jQuery': "jquery",
+      'Popper': 'popper.js'
+    }),
   ],
   devServer: {
     stats: 'errors-only',
