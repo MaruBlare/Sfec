@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Homepage</title>
-        <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
-    </head>
-    <body>
-        
-    </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Homepage</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+  <div class='menu'>
+    <div class='menu-logo'>
+    </div>
+    <div class='menu-logo-text'>
+      <p>Project Name</p>
+    </div>
+
+    <nav class='menu-nav'>
+      <ul class='nav-container m-0 p-0'>
+        <li class='nav-link-container'>
+          <a href="#" class='nav-link'>
+            Models
+          </a>
+        </li>
+        <li class='nav-link-container'>
+          <a href="#" class='nav-link'>
+            Consulting
+          </a>
+        </li>
+        <li class='nav-link-container'>
+          <a href="#" class='nav-link'>
+            About
+          </a>
+        </li>
+        <li class='nav-link-container'>
+          <a href="#" class='nav-link'>
+            Blog
+          </a>
+        </li>
+        <li class='nav-link-container'>
+          <a href="#" class='nav-link' id='shopping-cart'>
+            <img src="./src/img/icon/shopping_cart_24px.png" alt="shopping_cart">
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+
+</body>
+
 </html>

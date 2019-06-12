@@ -1,0 +1,157 @@
+html { 
+  font-family: 'Inter', sans-serif;     
+}
+
+body{
+  margin: 0;
+}
+
+.menu{
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; 
+
+  height: 88px;
+  left: 0px;  
+  top: 0px; 
+}
+
+.menu-logo{
+  position: absolute; 
+  border: 8px solid #0078FF;
+  border-radius: 50px;
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;    
+}
+
+.menu-logo-text{
+  position: absolute;
+  width: 71px;
+  height: 30px;   
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+
+  color: #0E0F21;
+}
+
+.nav-container{
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+.nav-link-container{
+  margin-right: 49px;
+}
+
+.nav-link{
+  font-family: Inter UI;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  
+  line-height: 24px;    
+  letter-spacing: 1px; 
+  text-transform: uppercase;
+
+  cursor: pointer;
+  color: white;
+}
+
+@media (min-width: 1920px)  {
+  .menu{
+    width: 1920px;
+  }
+
+  .menu-logo {
+    left: 11.04%;
+    top:24px;
+  }
+
+  .menu-logo-text{
+    left: 257px;
+    top: 32px;
+  }
+
+  .menu-nav{
+    left: 1261px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1920px) {
+  .menu{
+    width: 1440px;
+    left: calc(50% - 1440px/2);
+  }
+
+  .menu-logo {
+    left: calc(50% - 40px/2 - 540px);
+    top: 21px;
+  }
+
+  .menu-logo-text{        
+    left: 205px;
+    top: 29px;
+  }
+
+  .menu-nav{
+    left: 833px;
+  }
+}
+
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .menu{
+    width: 768px;        
+  }
+
+  .menu-logo {
+    left: calc(50% - 40px/2 - 320px);
+    top:21px;
+  }
+
+  .menu-logo-text{
+    left: 89px;
+    top: 29px;
+  }
+
+  .menu-nav{
+    left: 277;
+  }
+}
+
+@media (max-width: 320px) {
+  .menu{
+    width: 320px;
+    height: 56px;
+  }
+
+  .menu-logo {
+    left: calc(50% - 40px/2);
+    top: 8px;
+  }
+
+  .menu-logo-text{
+    display: none;
+  }
+
+  .menu-nav{
+    display: none;
+  }
+}
+
+.no-m{
+  margin: 0;
+}
+
+.no-p{
+  padding: 0;
+}
+
