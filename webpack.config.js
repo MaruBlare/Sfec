@@ -43,10 +43,11 @@ module.exports = {
         },
       },
       { 
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
-        use: [
-          'url-loader?limit=100000'
-        ] 
+        test: /\.(svg|woff|woff2|ttf|eot)$/,
+        loader: 'file-loader', 
+        options: {
+          name: 'fonts/[name].[ext]'
+        }
       }
     ]
   },
