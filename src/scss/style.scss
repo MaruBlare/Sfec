@@ -97,11 +97,11 @@
 }
 
 .menu-logo-text{
-  font-family: Roboto;
+  font-family: RobotoRegular;
   font-style: normal;
   font-weight: bold;
-  font-size: 100%;
-  line-height: 100%;
+  font-size: 14px;
+  line-height: 14px;
   text-transform: uppercase;
 
   color: #0E0F21;
@@ -198,7 +198,7 @@
 }
 
 .heading-1{
-  font-family: Inter UI;
+  font-family: InterUIBold;
   font-style: normal;
   font-weight: bold;  
   margin-bottom: 40px;
@@ -217,6 +217,7 @@
 }
 
 .header-text-textbox{
+  text-align: start;
 
   @media (min-width: 1920px+48px) {
     width: 521px;
