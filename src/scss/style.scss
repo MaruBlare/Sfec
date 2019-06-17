@@ -1,2 +1,18 @@
-@import "fonts.scss" 
+@import "fonts.scss";
 
+.page-wrapper{
+  position: relative;
+
+  background: #FFFFFF;
+
+  @media (min-width: 1920px+48px) {
+    width: 1920px;
+    height: 5969px;
+  }  
+
+  @media (max-width: 1920px+48px){
+    width: 1440px;
+    height: 5380px;
+  } 
+  
+}
