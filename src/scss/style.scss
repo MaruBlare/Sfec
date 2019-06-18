@@ -1,18 +1,12 @@
 @import "fonts.scss";
-
+@import "_variables.scss";
 .page-wrapper{
   position: relative;
-
-  background: #FFFFFF;
-
-  @media (min-width: 1920px+48px) {
-    width: 1920px;
-    height: 5969px;
-  }  
-
-  @media (max-width: 1920px+48px){
-    width: 1440px;
-    height: 5380px;
-  } 
-  
+  width: 100%;
+  min-width: 1440px;
+  max-width: 1920px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0 auto;
+  background: $white; 
 }
