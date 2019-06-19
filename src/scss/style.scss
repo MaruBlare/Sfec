@@ -28,6 +28,11 @@ p{
   &-nav{
     justify-content: flex-end;
   }
+  &-banner-image{
+    margin:0 !important;
+    padding:0 !important;
+    justify-content: flex-end;
+  }
 }
 .block{
   position:relative;
@@ -42,4 +47,6 @@ p{
     color: #2D2D2D;
   }
 }
-
+.top-banner-block{
+  justify-content: flex-end;
+}
