@@ -1,12 +1,45 @@
 @import "fonts.scss";
 @import "_variables.scss";
-.page-wrapper{
-  position: relative;
+body{
+  margin:0;
+  background: $gray; //для того, чтобы было видно линки в первое время
+}
+p{
+  margin:0;
+}
+.container{
+  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
   width: 100%;
-  min-width: 1440px;
-  max-width: 1920px;
   padding-left: 24px;
   padding-right: 24px;
   margin: 0 auto;
-  background: $white; 
+  &-header{
+    height:88px;
+    min-width: 320px+48px;
+    max-width: 1920px+48px;
+  }
+  &-logo{
+    padding: 0 !important;
+  }
+  &-nav{
+    justify-content: flex-end;
+  }
 }
+.block{
+  position:relative;
+  display: flex;
+  align-content: center; 
+  width:100%;
+}
+.link{
+  transition: all .3s cubic-bezier(.2, 0, 0, 1);
+  z-index: 1;
+  &:hover {
+    color: #2D2D2D;
+  }
+}
+
