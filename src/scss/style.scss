@@ -25,6 +25,7 @@ p{
   }
   &-logo{
     padding: 0 !important;
+    transition: opacity .5s ease;
   }
   &-nav{
     justify-content: flex-end;
