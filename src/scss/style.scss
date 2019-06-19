@@ -6,7 +6,7 @@ body{
   background: $white; 
 }
 p{
-  margin:0;
+  margin:0 0 40px 0;
 }
 .container{
   position:relative;
@@ -22,6 +22,7 @@ p{
     height:88px;
     min-width: 320px+48px;
     max-width: 1920px+48px;
+    
   }
   &-logo{
     padding: 0 !important;
@@ -30,10 +31,20 @@ p{
   &-nav{
     justify-content: flex-end;
   }
-  &-banner-image{
+  &-top-banner-image{
+    z-index: 0;
     margin:0 !important;
     padding:0 !important;
     justify-content: flex-end;
+  }
+  &-top-banner-textbox{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+    z-index: 10;
+    min-width: 288px+48px;
+    max-width: 706px+48px;
+    left: calc(50% - 544px/2 - 288px);
   }
 }
 .block{
@@ -106,4 +117,17 @@ p{
   z-index: 0;
   justify-content: flex-end;
   top:-88px;
+}
+.main-title{
+  font-family: InterUIBold;
+  font-size: 3vw;
+  color: $charcoal-black;
+}
+.text{
+  font-family: InterUIRegular;
+  font-size: 1.2vw;
+  color: $gray;
+}
+.no-m{
+  margin:0 !important;
 }
