@@ -1,4 +1,5 @@
 @import "fonts.scss"; 
+@import "_variables.scss";
 
 .page-wrapper{
   position: relative;
@@ -122,8 +123,6 @@
     width: 920px;
     left: 520px;
   }
-  
-}
 
 .nav-list-container{
   display: flex;
