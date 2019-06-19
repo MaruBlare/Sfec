@@ -78,4 +78,13 @@ p{
   text-decoration: none;
   padding: 0 !important;
   color: $white;
+  
+}
+
+.link{
+  transition: all .3s cubic-bezier(.2, 0, 0, 1);
+  z-index: 1;
+  &:hover {
+    color: #2D2D2D;
+  }
 }
