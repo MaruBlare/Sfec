@@ -1,71 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Homepage</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="main.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Homepage</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="main.js"></script>
+</head>
 
-  <body>
-
-    <div class='menu'>
-      <div class='menu-logo'>
+<body>
+  <header class="block header">
+    <div class="container container-header">
+      <div class='container container-logo'>
+        <div class='logo header-logo'>
+        </div>
+        <div class='header-logo-textbox'>
+          <p class='link logo-text header-logo-text'>Project Name</p>
+        </div>
       </div>
-      <div class='menu-logo-text'>
-        <p>Project Name</p>
-      </div>
-
-      <nav class='menu-nav'>
-        <ul class='nav-container m-0 p-0'>
-          <li class='nav-link-container'>
-            <a href="#" class='nav-link'>
+      <nav class='container container-nav'>
+        <ul class='nav-list'>
+          <li class='link nav-link-container'>
+            <a href="#" class='link nav-link'>
               Models
             </a>
           </li>
           <li class='nav-link-container'>
-            <a href="#" class='nav-link'>
+            <a href="#" class='link nav-link'>
               Consulting
             </a>
           </li>
           <li class='nav-link-container'>
-            <a href="#" class='nav-link'>
+            <a href="#" class='link nav-link'>
               About
             </a>
           </li>
           <li class='nav-link-container'>
-            <a href="#" class='nav-link'>
+            <a href="#" class='link nav-link'>
               Blog
             </a>
           </li>
           <li class='nav-link-container'>
-            <a href="#" class='nav-link' id='shopping-cart'>
+            <a href="#" class='link nav-link' id='shopping-cart'>
               <img src="./src/img/icon/shopping_cart_24px.png" alt="shopping_cart">
             </a>
           </li>
         </ul>
       </nav>
     </div>
-
-    <div class='header-container'>
-      <header class='header'>
-        <img src="./src/img/png/main-1x.png" alt="header-image" class='header-image'>
-        <div class='header-heading'>
-          <p class='header-heading-text m-0'>
-            Excel Models Built by Investors, for Investors
-          </p>
-        </div>
-        <div class='header-p'>
-          <p class='header-p-text m-0'>
-            Save time and win more deals with our consulting services.
-          </p>
-        </div>
-      </header>
+  </header>
+  <div class='block top-banner-block'>
+    <div class="container container-top-banner-textbox">
+      <p class='title main-title'>Excel Models Built by Investors, for Investors </p>
+      <p class='text no-m'>Save time and win more deals with our products and consulting services.</p>
     </div>
+    <div class="container container-top-banner-image">
+      <img src="./src/img/png/main-1x.png" alt="top-banner-image">
+    </div>
+  </div>
+  <div class='block testimonial-block'>
+    <div class="container container-testimonial content">
+      <p class='title sub-title'> Testimonials </p>
+      <div class='container container-citation'>
+        <p class='text citation'> "Absolutely loved. I found it to be very lucidly explained, which helped me revise the basic modelling skills at a great pace. The drawings and quotes were the cherry on top!"</p>
+        <p class='text sub-sub-text'><b>Esha Puri</b>, Associate, Deutsche Bank </p>
+      </div>
+      
+    </div>
+  </div>
+  <div class='block models-block'>
+    <div class='container container-models content'>
+      <p class='title sub-title'>Models</p>
+      <div class='content-list'>
+        <div class='list-item'>
+          <img class='mb-32' src="./src/img/png/image-0.png" alt="model-0">
+          <p class='title sub-sub-title mb-16'>Standard Acquisition Model</p>
+          <p class='text sub-text mb-24'>Multifamily Modeling’s basic apartment acquisition model for an existing building. Logical, straightforward, and easy to use, whether you’re new to underwriting or an experienced investor.</p>
+          <button class='button'>
+            <span class='sub-sub-text'>Learn More</span>
+          </button>
+        </div>
+        <div class='list-item'>
+          <img class='mb-32' src="./src/img/png/image-1.png" alt="model-0">
+          <p class='title sub-sub-title mb-16'>Value-Add/Renovation Model</p>
+          <button class='button'>
+            <span class='sub-sub-text'>Learn More</span>
+          </button>
+        </div>
+        <div class='list-item'>
+          <img class='mb-32' src="./src/img/png/image-2.png" alt="model-0">
+          <p class='title sub-sub-title mb-16'>Condo Development Model</p>
+          <p class='text sub-text mb-24'>For the ground-up development of a condominium building or complex. Featuring a robust development schedule, allowing users to easily run a number of construction timing scenarios.</p>
+          <button class='button'>
+            <span class='sub-sub-text'>Learn More</span>
+          </button>
+        </div>
+        <div class='list-item'>
+          <img class='mb-32' src="./src/img/png/image-3.png" alt="model-0">
+          <p class='title sub-sub-title mb-16'>Apartment Development Model</p>
+          <p class='text sub-text mb-24'>Our flagship development product featuring everything from a Back-of-the-Envelope analysis (allowing developers to get to a quick Yield-on-Cost) to our sophisticated timing and construction schedules.</p>
+          <button class='button'>
+            <span class='sub-sub-text'>Learn More</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  </body>
+  <footer class='block footer'>
+    <div class='container container-logo'>
+      <div class='logo footer-logo'>
+      </div> 
+      <div class='footer-logo-textbox'>
+        <p class='link logo-text footer-logo-text '>Project Name</p>
+      </div>
+    </div>
+  </footer>
+</body>
 
 </html>

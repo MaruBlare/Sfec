@@ -1,320 +1,329 @@
-html { 
-  font-family: 'Inter', sans-serif;     
+@import "fonts.scss";
+@import "_variables.scss";
+html{
+  height: 100%;
 }
-
 body{
-  margin: 0;
+  position: relative;
+  margin:0;
+  padding-bottom: 200px;
+  min-height: 100%;
+  background: $white; 
 }
-
-.menu{
-  position: absolute;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center; 
-
-  height: 88px;
-  left: 0px;  
-  top: 0px; 
+p{
+  margin:0 0 40px 0;
 }
-
-.menu-logo{
-  position: absolute; 
-  border: 8px solid #0078FF;
-  border-radius: 50px;
-  box-sizing: border-box;
-  width: 40px;
-  height: 40px;    
-}
-
-.menu-logo-text{
-  position: absolute;
-  width: 71px;
-  height: 30px;   
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 14px;
-  text-transform: uppercase;
-
-  color: #0E0F21;
-}
-
-.nav-container{
+.container{
+  position:relative;
   display: flex;
   align-items: center;
+  justify-content: center;
+  height: inherit;
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0 auto;
+  &-header{
+    height:88px;
+    min-width: 320px+48px;
+    max-width: 1920px+48px;
+  }
+  &-logo{
+    justify-content: flex-start;
+    padding: 0 !important;
+    transition: opacity .5s ease;
+    @media screen and  (min-width: $xl){
+      left: 11.04%;
+    }
+    @media screen and (min-width: $lg) and (max-width: $xl){
+      left: 11.11%;
+    }
+    @media screen and (min-width: $md) and (max-width: $lg){
+      left: 5.73%;
+    }
+    @media screen and (max-width: $md){
+      justify-content: center;
+    }
+  }
+  &-nav{
+    justify-content: flex-end;
+  }
+  &-top-banner-image{
+    z-index: 0;
+    margin:0 !important;
+    padding:0 !important;
+    justify-content: flex-end;
+  }
+  &-top-banner-textbox{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+    z-index: 10;
+    min-width: 288px+48px;
+    max-width: 706px+48px;
+    @media screen and (min-width: $xl){
+      left: 212px;
+    }
+    @media screen and (min-width: $lg) and (max-width: $xl){
+      left: calc(50% - 544px/2 - 288px);
+    }
+  }
+  &-testimonial{
+    align-items: flex-start;
+    @media screen and (max-width: $xl) {
+      flex-flow: column;
+    }
+    
+  }
+  &-citation{
+    margin: 0;
+    align-items: flex-start;
+    flex-flow: column;
+    min-width: 288px+48px;
+    max-width: 856px+48px;
+  }
+  &-models{
+    flex-flow: column;
+    align-items: flex-start;
+  }
+}
+.block{
+  position:relative;
+  display: flex;
+  align-content: center;
+  width:100%;
+}
+.top-banner-block{
+  z-index: 0;
+  justify-content: flex-end;
+  top:-88px;
+  @media screen and (min-width: $xl){
+    margin-bottom: 213px;
+  }
+  @media screen and (min-width: $lg) and (max-width: $xl){
+    margin-bottom: 88px;
+  }
+  @media screen and (min-width: $md) and (max-width: $lg){
+    margin-bottom: 120px;
+  }
+  @media screen and (max-width: $lg){
+    margin-bottom: 81px;
+  }
+}
+.testimonial-block{
+  @media (min-width: $lg) {
+    margin-bottom: 201px;
+  }
+  @media  (min-width: $sm) and (max-width: $lg){
+    margin-bottom: 121px;
+  }
+}
+.models-block{
+  @media (min-width: $lg) {
+    margin-bottom: 200px;
+  }
+  @media  (min-width: $sm) and (max-width: $lg){
+    margin-bottom: 120px;
+  }
+}
+.content {
+  justify-content: flex-start;
+  min-width: 288px+48px;
+  max-width: 1496px+48px;
+}
+.content-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;  
+  @media (max-width: $md) {
+    flex-direction: column;
+  }
+}
+.list-item{
+  display: block;
+  width: calc(50% - 24px);
+  margin-bottom: 80px;
+}
+.header{
+  position: sticky;
+  transition: background-color 1s ease;
+  top: 0px;
+  z-index:20;
+}
+.logo{
+  border: 8px solid $ultramatine-blue;
+  border-radius: 50px; 
+  box-sizing: border-box;
+}
+.header-logo{
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+}
+.footer-logo{
+  height: 70px;
+  width: 70px;
+  margin-right: 20px;
+}
+.header-logo-textbox{
+  width: 71px;
+  height: 30px;
+  overflow-wrap: break-word;
+}
+.footer-logo-textbox{
+  width: 130px;
+  height: 54px;
+  overflow-wrap: break-word;
+}
+.logo-text{
+  font-family: RobotoRegular;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  
+  &:hover{
+    cursor: pointer;
+  }
+}
+.header-logo-text{
+  font-size: 14px;
+  line-height: 14px;
+  color: $charcoal-black;
+}
+.footer-logo-text{
+  font-size: 24px;
+  line-height: 28px;
+  color: $white;
+}
+.nav-list{
+  display: flex;
+  justify-content: flex-end;
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
-
 .nav-link-container{
-  margin-right: 49px;
+  margin: 0 49px 0 0;
 }
-
 .nav-link{
   font-family: Inter UI;
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
-  
+  font-size: 12px;  
   line-height: 24px;    
   letter-spacing: 1px; 
-  text-transform: uppercase;
-
-  color: white;
+  text-transform: uppercase;  
+  text-decoration: none;
+  padding: 0 !important;
+  color: $white;  
 }
-
-.header-container{
-  position: absolute;
-  top: 0px;
+.link{
+  transition: all .3s cubic-bezier(.2, 0, 0, 1) !important;
+  z-index: 1;
+  &:hover {
+    color: $ultramatine-blue;
+  }
 }
-
-.header-image{
-  position: absolute;
-  top: 0px;
-  z-index: -1;
-}
-
-.header-heading{
-  position: absolute; 
-  margin-bottom:  40px;
-}
-
-.header-heading-text{
-  font-family: Inter UI;
+.title{
+  font-family: InterUIBold;
   font-style: normal;
-  font-weight: bold;
-  font-size: 80px;
-  line-height: 64px;
-  color: #0E0F21; 
+  color: $charcoal-black;
 }
-
-.header-p{
-  position: absolute;  
-}
-
-.header-p-text{
-  font-family: Inter UI;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 32px;
-  
-  color: #6E6F7A;
-}
-
-@media (min-width: 1920px)  {
-  .menu{
-    width: 1920px;
-  }
-
-  .menu-logo {
-    left: 11.04%;
-    top:24px;
-  }
-
-  .menu-logo-text{
-    left: 257px;
-    top: 32px;
-  }
-
-  .menu-nav{
-    left: 1261px;
-  }
-
-  .header-container{
-    width: 1708px;
-    height: 1154px;
-    left: 212px;
-  }
-
-  .header-image{
-    width: 1183px;
-    height: 1141px;
-    left: 737px;
-  }
-
-  .header-heading{
-    width: 706px;
-    height: 288px;
-    left: 212px;
-    top: 360px;  
-  }
-
-  .header-heading-text{
+.main-title{
+  @media screen and (min-width: $xl) {
     font-size: 80px;
     line-height: 96px;
   }
-
-  .header-p{
-    width: 521px;
-    height: 64px;
-    left: 212px;
-    top: 688px;   
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1920px) {
-  .menu{
-    width: 1440px;
-    left: calc(50% - 1440px/2);
-  }
-
-  .menu-logo {
-    left: calc(50% - 40px/2 - 540px);
-    top: 21px;
-  }
-
-  .menu-logo-text{        
-    left: 205px;
-    top: 29px;
-  }
-
-  .menu-nav{
-    left: 833px;
-  }
-
-  .header-container{
-    width: 1280px;
-    height: 888px;
-    left: 160px;
-  }
-
-  .header-image{
-    width: 920px;
-    height: 888px;
-    left: 520px;
-  }
-
-  .header-heading{
-    width: 544px;
-    height: 192px;
-    left: calc(50% - 544px/2 - 288px);
-    top: 288px;  
-  }
-
-  .header-heading-text{
+  @media screen and (min-width: $lg) and (max-width: $xl){
     font-size: 56px;
     line-height: 64px;
   }
-
-  .header-p{
-    width: 384px;
-    height: 96px;
-    left: calc(50% - 384px/2 - 368px);
-    top: 520px;  
-  }
-}
-
-@media (min-width: 320px) and (max-width: 768px) {
-  .menu{
-    width: 768px;        
-  }
-
-  .menu-logo {
-    left: calc(50% - 40px/2 - 320px);
-    top:21px;
-  }
-
-  .menu-logo-text{
-    left: 89px;
-    top: 29px;
-  }
-
-  .menu-nav{
-    left: 277;
-  }
-
-  .header-container{
-    width: 768px;
-    height: 605px;
-    left: 0px;
-    top: 88px;
-  }
-
-  .header-image{
-    width: 768px;
-    height: 397px;
-    left: 0px;
-  }
-
-  .header-heading{
-    width: 680px;
-    height: 96px;
-    left: 44px;
-    top: 493px; 
-  }
-
-  .header-heading-text{
+  @media screen and (min-width: $md) and (max-width: $lg){
     font-size: 40px;
     line-height: 48px;
   }
-
-  .header-p{
-    width: 680px;
-    height: 64px;
-    left: 44px;
-    top: 629px;
-  }
-}
-
-@media (max-width: 320px) {
-  .menu{
-    width: 320px;
-    height: 56px;
-  }
-
-  .menu-logo {
-    left: calc(50% - 40px/2);
-    top: 8px;
-  }
-
-  .menu-logo-text{
-    display: none;
-  }
-
-  .menu-nav{
-    display: none;
-  }
-
-  .header-container{
-    width: 320px;
-    height: 170px;
-    left: 0px;
-    top: 56px;
-  }
-
-  .header-heading{
-    width: 288px;
-    height: 120px;
-    left: 16px;
-    top: 250px;
-    margin-bottom:  24px;
-  }
-
-  .header-heading-text{
+  @media screen and (max-width: $md){
     font-size: 32px;
     line-height: 40px;
   }
-
-  .header-p{
-    width: 288px;
-    height: 38px;
-    left: 16px;
-    top: 394px;
+}
+.sub-title{
+  @media screen and (min-width: $lg) {
+    font-size: 40px;
+    line-height: 48px;
   }
-  
-  .header-p-text{
+  @media screen and (max-width: $lg){
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+.sub-sub-title{
+  @media screen and (min-width: $lg) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  @media screen and (max-width: $lg){
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+.text{
+  font-family: InterUIRegular;
+  font-style: normal;
+  color: $gray;
+  @media screen and (min-width: $md){
+    font-size: 24px;
+    line-height: 32px;
+  }
+  @media screen and (max-width: $md){
     font-size: 16px;
     line-height: 19px;
-  }    
+  }
 }
-
+.sub-text{
+  font-size: 16px;
+  line-height: 24px;
+}
+.sub-sub-text{
+  font-size: 16px;
+  line-height: 19px;
+}
+.citation{
+  margin-bottom: 32px !important;
+  font-style: italic;
+  color: $charcoal-black;
+}
+.button{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-self: flex-start;
+  min-width: 220px;  
+  min-height: 48px;
+  border-radius: 8px;
+  color: $white;
+  background: $ultramatine-blue;
+}
 .no-m{
-  margin: 0;
+  margin:0 !important;
 }
-
-.no-p{
-  padding: 0;
+.mb-16{
+  margin-bottom: 16px;
 }
-
+.mb-24{
+  margin-bottom: 24px;
+}
+.mb-32{
+  margin-bottom: 32px;
+}
+.footer{
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  height: 200px;
+  background: $charcoal-black;
+}
