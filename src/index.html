@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="main.js"></script>
 </head>
-
 <body>
   <header class="header">
     <div class="container tr-bc">
@@ -18,33 +16,32 @@
           <div class='logo header-logo'>
           </div>
           <div class='header-logo-textbox'>
-            <p class='link logo-text header-logo-text'>Project Name</p>
+            <a class='link' href="#"><p class='logo-text header-logo-text'>Project Name</p></a> 
           </div>
         </div>
-        
         <nav class='nav-wrapper'>
             <ul class='nav-list'>
-              <li class='link nav-link-container'>
+              <li class='link nav-link-wrapper'>
                 <a href="#" class='link nav-link'>
                   Models
                 </a>
               </li>
-              <li class='nav-link-container'>
+              <li class='nav-link-wrapper'>
                 <a href="#" class='link nav-link'>
                   Consulting
                 </a>
               </li>
-              <li class='nav-link-container'>
+              <li class='nav-link-wrapper'>
                 <a href="#" class='link nav-link'>
                   About
                 </a>
               </li>
-              <li class='nav-link-container'>
+              <li class='nav-link-wrapper'>
                 <a href="#" class='link nav-link'>
                   Blog
                 </a>
               </li>
-              <li class='nav-link-container'>
+              <li class='nav-link-wrapper'>
                 <a href="#" class='link nav-link' id='shopping-cart'>
                   <img src="./src/img/icon/shopping_cart_24px.png" alt="shopping_cart">
                 </a>
@@ -54,7 +51,6 @@
       </div>
     </div>
   </header>
-
   <div class='top-banner-block'>
     <div class="container">
       <div class="top-banner-wrapper">
@@ -66,65 +62,72 @@
       </div>
     </div>
   </div>
-  
-  <div class='block testimonial-block'>
-    <div class="container container-testimonial content">
-      <p class='title sub-title'> Testimonials </p>
-      <div class='container container-citation'>
-        <p class='text citation'> "Absolutely loved. I found it to be very lucidly explained, which helped me revise the basic modelling skills at a great pace. The drawings and quotes were the cherry on top!"</p>
-        <p class='text sub-sub-text'><b>Esha Puri</b>, Associate, Deutsche Bank </p>
+  <div class='testimonial-block'>
+    <div class="container">
+      <div class='testimonial-wrapper'>
+          <p class='title sub-title'> Testimonials </p>
+          <div>
+            <p class='text citation'> "Absolutely loved. I found it to be very lucidly explained, which helped me revise the basic modelling skills at a great pace. The drawings and quotes were the cherry on top!"</p>
+            <p class='text sub-sub-text'><b>Esha Puri</b>, Associate, Deutsche Bank </p>
+          </div>
       </div>
+      
       
     </div>
   </div>
-  <div class='block models-block'>
-    <div class='container container-models content'>
-      <p class='title sub-title'>Models</p>
-      <div class='content-list'>
-        <div class='list-item'>
-          <img class='mb-32' src="./src/img/png/image-0.png" alt="model-0">
-          <p class='title sub-sub-title mb-16'>Standard Acquisition Model</p>
-          <p class='text sub-text mb-24'>Multifamily Modeling’s basic apartment acquisition model for an existing building. Logical, straightforward, and easy to use, whether you’re new to underwriting or an experienced investor.</p>
-          <button class='button'>
-            <span class='sub-sub-text'>Learn More</span>
-          </button>
-        </div>
-        <div class='list-item'>
-          <img class='mb-32' src="./src/img/png/image-1.png" alt="model-0">
-          <p class='title sub-sub-title mb-16'>Value-Add/Renovation Model</p>
-          <button class='button'>
-            <span class='sub-sub-text'>Learn More</span>
-          </button>
-        </div>
-        <div class='list-item'>
-          <img class='mb-32' src="./src/img/png/image-2.png" alt="model-0">
-          <p class='title sub-sub-title mb-16'>Condo Development Model</p>
-          <p class='text sub-text mb-24'>For the ground-up development of a condominium building or complex. Featuring a robust development schedule, allowing users to easily run a number of construction timing scenarios.</p>
-          <button class='button'>
-            <span class='sub-sub-text'>Learn More</span>
-          </button>
-        </div>
-        <div class='list-item'>
-          <img class='mb-32' src="./src/img/png/image-3.png" alt="model-0">
-          <p class='title sub-sub-title mb-16'>Apartment Development Model</p>
-          <p class='text sub-text mb-24'>Our flagship development product featuring everything from a Back-of-the-Envelope analysis (allowing developers to get to a quick Yield-on-Cost) to our sophisticated timing and construction schedules.</p>
-          <button class='button'>
-            <span class='sub-sub-text'>Learn More</span>
-          </button>
+  <div class='models-block'>
+    <div class='container'>
+      <div class='models-wrapper'>
+        <p class='title sub-title'>Models</p>
+        <div class='content-list'>
+          <div class='list-item'>
+            <img class='image mb-32' src="./src/img/png/image-0.png" alt="model-0">
+            <p class='title sub-sub-title mb-16'>Standard Acquisition Model</p>
+            <p class='text sub-text mb-24'>Multifamily Modeling’s basic apartment acquisition model for an existing building. Logical, straightforward, and easy to use, whether you’re new to underwriting or an experienced investor.</p>
+            <button class='button'>
+              <span class='sub-sub-text'>Learn More</span>
+            </button>
+          </div>
+          <div class='list-item'>
+            <img class='image mb-32' src="./src/img/png/image-1.png" alt="model-0">
+            <p class='title sub-sub-title mb-16'>Value-Add/Renovation Model</p>
+            <button class='button'>
+              <span class='sub-sub-text'>Learn More</span>
+            </button>
+          </div>
+          <div class='list-item'>
+            <img class='image mb-32' src="./src/img/png/image-2.png" alt="model-0">
+            <p class='title sub-sub-title mb-16'>Condo Development Model</p>
+            <p class='text sub-text mb-24'>For the ground-up development of a condominium building or complex. Featuring a robust development schedule, allowing users to easily run a number of construction timing scenarios.</p>
+            <button class='button'>
+              <span class='sub-sub-text'>Learn More</span>
+            </button>
+          </div>
+          <div class='list-item'>
+            <img class='image mb-32' src="./src/img/png/image-3.png" alt="model-0">
+            <p class='title sub-sub-title mb-16'>Apartment Development Model</p>
+            <p class='text sub-text mb-24'>Our flagship development product featuring everything from a Back-of-the-Envelope analysis (allowing developers to get to a quick Yield-on-Cost) to our sophisticated timing and construction schedules.</p>
+            <button class='button'>
+              <span class='sub-sub-text'>Learn More</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <footer class='block footer'>
-    <div class='container container-logo'>
-      <div class='logo footer-logo'>
-      </div> 
-      <div class='footer-logo-textbox'>
-        <p class='link logo-text footer-logo-text '>Project Name</p>
+  <footer class='footer'>
+    <div class='container footer-container'>
+      <div class='footer-wrapper'>
+        <div class='logo-wrapper'>
+          <div class='logo footer-logo'>
+            <a href="#"></a>
+          </div>
+          <div class='footer-logo-textbox'>
+            <a class='link' href="#"><p class='logo-text footer-logo-text'>Project Name</p></a> 
+          </div>
+        </div>
       </div>
     </div>
   </footer>
 </body>
-
 </html>

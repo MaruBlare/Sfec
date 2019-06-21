@@ -1,5 +1,6 @@
 @import "fonts.scss";
 @import "_variables.scss";
+//-----------------------------------------general---------------------------------------------------
 html{
   height: 100%;
 }
@@ -13,18 +14,16 @@ body{
 p{
   margin:0 0 40px 0;
 }
-.link{
-  transition: all .3s cubic-bezier(.2, 0, 0, 1) !important;
-  z-index: 1;
-  &:hover {
-    color: $ultramatine-blue;
-  }
+a{
+  color: $white;
 }
 .image{
   width:100%;
 }
+//----------------------------------container/wrappers/blocks-----------------------------------------
 .container{
   position: relative;
+  height: inherit;
   width: 100%;
   min-width: 320px+48px;
   max-width: 1708px+48px;
@@ -34,25 +33,140 @@ p{
 }
 .header{
   position: sticky;
+  height: 88px;
   top: 0px;
   z-index:20;
 }
-.header-wrapper{
-  height: 88px;
+.footer{
+  height: 200px;
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+}
+.footer-container{
+  display: flex;
+  justify-content: center;
+  min-width: 320px+48px;
+  max-width: 1920px+48px;
+  background: $charcoal-black;
+}
+.top-banner-block{
+  position:relative;
+  top:-88px;
+  @media screen and (max-width: $sm){
+    margin-bottom: 81px;
+  }
+  @media screen and (min-width: $sm+1px) and (max-width: $lg){
+    margin-bottom: 120px;
+  }
+  @media screen and (min-width: $lg+1px) and (max-width: $xl){
+    margin-bottom: 88px;
+  }
+  @media screen and (min-width: $xl+1px){
+    margin-bottom: 213px;
+  }
+}
+.testimonial-block, .models-block{
+  @media (max-width: $lg) {
+    margin-bottom: 120px;
+  }
+  @media (min-width: $lg+1) {
+    margin-bottom: 200px;
+  }
+}
+.header-wrapper, .footer-wrapper{
+  height: inherit;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.footer-wrapper{
+  min-width: 320px+48px;
+  max-width: 1708px+48px;
+  align-self: flex-end;  
+}
+.testimonial-wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.models-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.top-banner-wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  padding-right: 96px !important;
+}
+.nav-link-wrapper{
+  margin: 0 49px 0 0;
 }
 .logo-wrapper{
   display: flex;
   flex-direction: row;
   align-items: flex-end;
 }
+//--------------------------------------------navigation----------------------------------------------
+.nav-list{
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-link{
+  font-family: InterUIBold;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;  
+  line-height: 24px;    
+  letter-spacing: 1px; 
+  text-transform: uppercase;  
+  text-decoration: none;
+  padding: 0 !important;
+  color: $white;  
+}
+//--------------------------------------------list/items----------------------------------------------
+.content-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;  
+  @media (max-width: $md) {
+    flex-direction: column;
+  }
+}
+.list-item{
+  display: block;
+  width: calc(50% - 24px);
+  margin-bottom: 80px;
+}
+//---------------------------------------------logo---------------------------------------------------
 .logo{
   border: 8px solid $ultramatine-blue;
   border-radius: 50px; 
   box-sizing: border-box;
+  &:hover{
+    cursor: pointer;
+  }
 }
 .header-logo{
   height: 40px;
@@ -78,153 +192,6 @@ p{
   line-height: 14px;
   color: $charcoal-black;
 }
-.nav-wrapper{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  padding-right: 96px !important;
-}
-.nav-list{
-  display: flex;
-  justify-content: flex-end;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.nav-link-container{
-  margin: 0 49px 0 0;
-}
-.nav-link{
-  font-family: InterUIBold;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;  
-  line-height: 24px;    
-  letter-spacing: 1px; 
-  text-transform: uppercase;  
-  text-decoration: none;
-  padding: 0 !important;
-  color: $white;  
-}
-.top-banner-block{
-  position:relative;
-  top:-88px;
-  @media screen and (min-width: $xl){
-    margin-bottom: 213px;
-  }
-  @media screen and (min-width: $lg) and (max-width: $xl){
-    margin-bottom: 88px;
-  }
-  @media screen and (min-width: $md) and (max-width: $lg){
-    margin-bottom: 120px;
-  }
-  @media screen and (max-width: $lg){
-    margin-bottom: 81px;
-  }
-}
-.top-banner-wrapper{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-//TODO: fix styling
-.container{
-  position:relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: inherit;
-  width: 100%;
-  padding-left: 24px;
-  padding-right: 24px;
-  margin: 0 auto;
-  &-header{
-    height:88px;
-  }
-  &-logo{
-    justify-content: flex-start;
-    transition: opacity .5s ease;
-  }
-  &-top-banner-image{
-    z-index: 0;
-    margin:0 !important;
-    padding:0 !important;
-    justify-content: flex-end;
-  }
-  &-top-banner-textbox{
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    z-index: 10;
-    min-width: 288px+48px;
-    max-width: 706px+48px;
-  }
-  &-testimonial{
-    align-items: flex-start;
-    @media screen and (max-width: $xl) {
-      flex-flow: column;
-    }
-  }
-  &-citation{
-    margin: 0;
-    align-items: flex-start;
-    flex-flow: column;
-    min-width: 288px+48px;
-    max-width: 856px+48px;
-  }
-  &-models{
-    flex-flow: column;
-    align-items: flex-start;
-  }
-}
-.testimonial-block{
-  @media (min-width: $lg) {
-    margin-bottom: 201px;
-  }
-  @media  (min-width: $sm) and (max-width: $lg){
-    margin-bottom: 121px;
-  }
-}
-.models-block{
-  @media (min-width: $lg) {
-    margin-bottom: 200px;
-  }
-  @media  (min-width: $sm) and (max-width: $lg){
-    margin-bottom: 120px;
-  }
-}
-.content {
-  justify-content: flex-start;
-  min-width: 288px+48px;
-  max-width: 1496px+48px;
-}
-.content-list{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: wrap;  
-  @media (max-width: $md) {
-    flex-direction: column;
-  }
-}
-.list-item{
-  display: block;
-  width: calc(50% - 24px);
-  margin-bottom: 80px;
-}
-.footer{
-  position: absolute; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  height: 200px;
-  background: $charcoal-black;
-}
-
 .footer-logo-textbox{
   width: 130px;
   height: 54px;
@@ -240,6 +207,7 @@ p{
   line-height: 28px;
   color: $white;
 }
+//---------------------------------------buttons/links------------------------------------------------
 .button{
   display: flex;
   align-content: center;
@@ -250,63 +218,76 @@ p{
   border-radius: 8px;
   color: $white;
   background: $ultramatine-blue;
+  transition: background-color .2s ease;
+  &:hover{
+    background: $blue;
+  }
+}
+.link{
+  text-decoration: none;
+  transition: all .3s cubic-bezier(.2, 0, 0, 1) !important;
+  z-index: 1;
+  &:hover {
+    color: $blue;
+  }
 }
 
-//-------------------------text/fonts/margins/etc---------------------------
+//-------------------------------------text/fonts/margins/etc-----------------------------------------
 .title{
   font-family: InterUIBold;
   font-style: normal;
+  margin-right: 132px;
   color: $charcoal-black;
 }
 .main-title{
-  @media screen and (min-width: $xl) {
-    font-size: 80px;
-    line-height: 96px;
-  }
-  @media screen and (min-width: $lg) and (max-width: $xl){
-    font-size: 56px;
-    line-height: 64px;
-  }
-  @media screen and (min-width: $md) and (max-width: $lg){
-    font-size: 40px;
-    line-height: 48px;
-  }
   @media screen and (max-width: $md){
     font-size: 32px;
     line-height: 40px;
   }
-}
-.sub-title{
-  @media screen and (min-width: $lg) {
+  @media screen and (min-width: $md+1px) and (max-width: $lg){
     font-size: 40px;
     line-height: 48px;
   }
-  @media screen and (max-width: $lg){
+  @media screen and (min-width: $lg+1px) and (max-width: $xl){
+    font-size: 56px;
+    line-height: 64px;
+  }
+  @media screen and (min-width: $xl) {
+    font-size: 80px;
+    line-height: 96px;
+  }
+}
+.sub-title{
+  @media screen and (max-width: $lg) {
     font-size: 32px;
     line-height: 40px;
   }
+  @media screen and (min-width: $lg+1){
+    font-size: 40px;
+    line-height: 48px;
+  }
 }
 .sub-sub-title{
-  @media screen and (min-width: $lg) {
-    font-size: 24px;
-    line-height: 32px;
-  }
   @media screen and (max-width: $lg){
     font-size: 20px;
     line-height: 24px;
+  }
+  @media screen and (min-width: $lg+1) {
+    font-size: 24px;
+    line-height: 32px;
   }
 }
 .text{
   font-family: InterUIRegular;
   font-style: normal;
   color: $gray;
-  @media screen and (min-width: $md){
-    font-size: 24px;
-    line-height: 32px;
-  }
   @media screen and (max-width: $md){
     font-size: 16px;
     line-height: 19px;
+  }
+  @media screen and (min-width: $md+1){
+    font-size: 24px;
+    line-height: 32px;
   }
 }
 .sub-text{
@@ -334,10 +315,15 @@ p{
 .mb-32{
   margin-bottom: 32px;
 }
-
-
-//------------------------------animation------------------------------
+//--------------------------------------------animation-----------------------------------------------
 .tr-bc{
   transition: background-color 1s ease;
+}
+.on-scroll-header{
+  background-color: $white;
+  border-bottom: 1px solid rgba(0, 0, 0, .19);
+}
+.on-scroll-link{
+  color: $scroll-link;
 }
 
