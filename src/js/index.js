@@ -7,10 +7,10 @@ $(document).ready(function () {
 
   $(window).on("scroll", function () {
     if ($(window).scrollTop() > headerHeight) {
-      $('.header').css('background', ultramatineBlue);
+      $('.container-header').css('background', ultramatineBlue);
       $('header .container-logo').css('opacity', 0);
     } else {
-      $('.header').css('background', "none");
+      $('.container-header').css('background', "none");
       $('header .container-logo').css('opacity', 1);
     }
   });

@@ -25,28 +25,14 @@ p{
   margin: 0 auto;
   &-header{
     height:88px;
-    min-width: 320px+48px;
-    max-width: 1920px+48px;
   }
   &-logo{
     justify-content: flex-start;
-    padding: 0 !important;
     transition: opacity .5s ease;
-    @media screen and  (min-width: $xl){
-      left: 11.04%;
-    }
-    @media screen and (min-width: $lg) and (max-width: $xl){
-      left: 11.11%;
-    }
-    @media screen and (min-width: $md) and (max-width: $lg){
-      left: 5.73%;
-    }
-    @media screen and (max-width: $md){
-      justify-content: center;
-    }
   }
   &-nav{
     justify-content: flex-end;
+    padding-right: 96px !important;
   }
   &-top-banner-image{
     z-index: 0;
@@ -57,23 +43,16 @@ p{
   &-top-banner-textbox{
     display: flex;
     flex-direction: column;
-    align-items: stretch; 
+    align-items: stretch;
     z-index: 10;
     min-width: 288px+48px;
     max-width: 706px+48px;
-    @media screen and (min-width: $xl){
-      left: 212px;
-    }
-    @media screen and (min-width: $lg) and (max-width: $xl){
-      left: calc(50% - 544px/2 - 288px);
-    }
   }
   &-testimonial{
     align-items: flex-start;
     @media screen and (max-width: $xl) {
       flex-flow: column;
     }
-    
   }
   &-citation{
     margin: 0;
