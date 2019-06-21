@@ -13,6 +13,123 @@ body{
 p{
   margin:0 0 40px 0;
 }
+.link{
+  transition: all .3s cubic-bezier(.2, 0, 0, 1) !important;
+  z-index: 1;
+  &:hover {
+    color: $ultramatine-blue;
+  }
+}
+.image{
+  width:100%;
+}
+.container{
+  position: relative;
+  width: 100%;
+  min-width: 320px+48px;
+  max-width: 1708px+48px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0 auto;
+}
+.header{
+  position: sticky;
+  top: 0px;
+  z-index:20;
+}
+.header-wrapper{
+  height: 88px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.logo{
+  border: 8px solid $ultramatine-blue;
+  border-radius: 50px; 
+  box-sizing: border-box;
+}
+.header-logo{
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+}
+.logo-text{
+  font-family: RobotoRegular;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  &:hover{
+    cursor: pointer;
+  }
+}
+.header-logo-textbox{
+  width: 71px;
+  height: 30px;
+  overflow-wrap: break-word;
+}
+.header-logo-text{
+  font-size: 14px;
+  line-height: 14px;
+  color: $charcoal-black;
+}
+.nav-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  padding-right: 96px !important;
+}
+.nav-list{
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-link-container{
+  margin: 0 49px 0 0;
+}
+.nav-link{
+  font-family: InterUIBold;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;  
+  line-height: 24px;    
+  letter-spacing: 1px; 
+  text-transform: uppercase;  
+  text-decoration: none;
+  padding: 0 !important;
+  color: $white;  
+}
+.top-banner-block{
+  position:relative;
+  top:-88px;
+  @media screen and (min-width: $xl){
+    margin-bottom: 213px;
+  }
+  @media screen and (min-width: $lg) and (max-width: $xl){
+    margin-bottom: 88px;
+  }
+  @media screen and (min-width: $md) and (max-width: $lg){
+    margin-bottom: 120px;
+  }
+  @media screen and (max-width: $lg){
+    margin-bottom: 81px;
+  }
+}
+.top-banner-wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+//TODO: fix styling
 .container{
   position:relative;
   display: flex;
@@ -29,10 +146,6 @@ p{
   &-logo{
     justify-content: flex-start;
     transition: opacity .5s ease;
-  }
-  &-nav{
-    justify-content: flex-end;
-    padding-right: 96px !important;
   }
   &-top-banner-image{
     z-index: 0;
@@ -64,29 +177,6 @@ p{
   &-models{
     flex-flow: column;
     align-items: flex-start;
-  }
-}
-.block{
-  position:relative;
-  display: flex;
-  align-content: center;
-  width:100%;
-}
-.top-banner-block{
-  z-index: 0;
-  justify-content: flex-end;
-  top:-88px;
-  @media screen and (min-width: $xl){
-    margin-bottom: 213px;
-  }
-  @media screen and (min-width: $lg) and (max-width: $xl){
-    margin-bottom: 88px;
-  }
-  @media screen and (min-width: $md) and (max-width: $lg){
-    margin-bottom: 120px;
-  }
-  @media screen and (max-width: $lg){
-    margin-bottom: 81px;
   }
 }
 .testimonial-block{
@@ -126,86 +216,43 @@ p{
   width: calc(50% - 24px);
   margin-bottom: 80px;
 }
-.header{
-  position: sticky;
-  transition: background-color 1s ease;
-  top: 0px;
-  z-index:20;
+.footer{
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  height: 200px;
+  background: $charcoal-black;
 }
-.logo{
-  border: 8px solid $ultramatine-blue;
-  border-radius: 50px; 
-  box-sizing: border-box;
-}
-.header-logo{
-  height: 40px;
-  width: 40px;
-  margin-right: 5px;
+
+.footer-logo-textbox{
+  width: 130px;
+  height: 54px;
+  overflow-wrap: break-word;
 }
 .footer-logo{
   height: 70px;
   width: 70px;
   margin-right: 20px;
 }
-.header-logo-textbox{
-  width: 71px;
-  height: 30px;
-  overflow-wrap: break-word;
-}
-.footer-logo-textbox{
-  width: 130px;
-  height: 54px;
-  overflow-wrap: break-word;
-}
-.logo-text{
-  font-family: RobotoRegular;
-  font-style: normal;
-  font-weight: 600;
-  text-transform: uppercase;
-  
-  &:hover{
-    cursor: pointer;
-  }
-}
-.header-logo-text{
-  font-size: 14px;
-  line-height: 14px;
-  color: $charcoal-black;
-}
 .footer-logo-text{
   font-size: 24px;
   line-height: 28px;
   color: $white;
 }
-.nav-list{
+.button{
   display: flex;
-  justify-content: flex-end;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  align-content: center;
+  justify-content: center;
+  align-self: flex-start;
+  min-width: 220px;  
+  min-height: 48px;
+  border-radius: 8px;
+  color: $white;
+  background: $ultramatine-blue;
 }
-.nav-link-container{
-  margin: 0 49px 0 0;
-}
-.nav-link{
-  font-family: Inter UI;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;  
-  line-height: 24px;    
-  letter-spacing: 1px; 
-  text-transform: uppercase;  
-  text-decoration: none;
-  padding: 0 !important;
-  color: $white;  
-}
-.link{
-  transition: all .3s cubic-bezier(.2, 0, 0, 1) !important;
-  z-index: 1;
-  &:hover {
-    color: $ultramatine-blue;
-  }
-}
+
+//-------------------------text/fonts/margins/etc---------------------------
 .title{
   font-family: InterUIBold;
   font-style: normal;
@@ -275,17 +322,6 @@ p{
   font-style: italic;
   color: $charcoal-black;
 }
-.button{
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-self: flex-start;
-  min-width: 220px;  
-  min-height: 48px;
-  border-radius: 8px;
-  color: $white;
-  background: $ultramatine-blue;
-}
 .no-m{
   margin:0 !important;
 }
@@ -298,11 +334,10 @@ p{
 .mb-32{
   margin-bottom: 32px;
 }
-.footer{
-  position: absolute; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  height: 200px;
-  background: $charcoal-black;
+
+
+//------------------------------animation------------------------------
+.tr-bc{
+  transition: background-color 1s ease;
 }
+
