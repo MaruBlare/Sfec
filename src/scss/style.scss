@@ -17,16 +17,13 @@ p{
 a{
   color: $white;
 }
-.image{
-  width:100%;
-}
 //----------------------------------container/wrappers/blocks-----------------------------------------
 .container{
   position: relative;
   height: inherit;
   width: 100%;
-  min-width: 320px+48px;
-  max-width: 1708px+48px;
+  min-width: 320px;
+  max-width: 1496px+48px;
   padding-left: 24px;
   padding-right: 24px;
   margin: 0 auto;
@@ -44,12 +41,18 @@ a{
   right: 0; 
   bottom: 0; 
 }
-.footer-container{
+.footer-container,.header-container{
   display: flex;
-  justify-content: center;
   min-width: 320px+48px;
   max-width: 1920px+48px;
+}
+.footer-container{
+  justify-content: center;
   background: $charcoal-black;
+}
+.header-container{
+  justify-content: flex-end;
+  transition: background-color 1s ease;
 }
 .top-banner-block{
   position:relative;
@@ -82,7 +85,7 @@ a{
   justify-content: space-between;
   align-items: center;
 }
-.footer-wrapper{
+.footer-wrapper, .header-wrapper{
   min-width: 320px+48px;
   max-width: 1708px+48px;
   align-self: flex-end;  
@@ -112,7 +115,7 @@ a{
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-end;
-  padding-right: 96px !important;
+  padding-right: 164px;
 }
 .nav-link-wrapper{
   margin: 0 49px 0 0;
@@ -240,6 +243,7 @@ a{
   color: $charcoal-black;
 }
 .main-title{
+  margin-right: 0;
   @media screen and (max-width: $md){
     font-size: 32px;
     line-height: 40px;
@@ -323,7 +327,13 @@ a{
   background-color: $white;
   border-bottom: 1px solid rgba(0, 0, 0, .19);
 }
-.on-scroll-link{
-  color: $scroll-link;
+.invert{
+  filter: invert(1);
 }
-
+//-----------------------------images/icons-----------------------------------
+.image{
+  min-width:100%;
+}
+.banner-image{
+  min-width:90%;
+}
