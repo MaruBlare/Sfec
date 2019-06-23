@@ -28,31 +28,21 @@ a{
   padding-right: 24px;
   margin: 0 auto;
 }
+.header, .footer{
+  z-index:20;
+  left: 0; 
+  right: 0;
+  margin: 0;
+}
 .header{
   position: sticky;
   height: 88px;
   top: 0px;
-  z-index:20;
+  transition: background-color 1s ease;
 }
 .footer{
-  height: 200px;
   position: absolute; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-}
-.footer-container,.header-container{
-  display: flex;
-  min-width: 320px+48px;
-  max-width: 1920px+48px;
-}
-.footer-container{
-  justify-content: center;
-  background: $charcoal-black;
-}
-.header-container{
-  justify-content: flex-end;
-  transition: background-color 1s ease;
+  height: 200px; 
 }
 .top-banner-block{
   position:relative;
@@ -80,15 +70,13 @@ a{
 }
 .header-wrapper, .footer-wrapper{
   height: inherit;
-  width: 100%;
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
 }
-.footer-wrapper, .header-wrapper{
-  min-width: 320px+48px;
-  max-width: 1708px+48px;
-  align-self: flex-end;  
+.footer-wrapper{
+  background: $charcoal-black;
 }
 .testimonial-wrapper{
   width: 100%;
@@ -96,6 +84,9 @@ a{
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
+  @media screen and (max-width: $lg){
+    flex-direction: column;
+  }
 }
 .models-wrapper{
   display: flex;
@@ -115,7 +106,6 @@ a{
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-end;
-  padding-right: 164px;
 }
 .nav-link-wrapper{
   margin: 0 49px 0 0;
@@ -163,52 +153,50 @@ a{
   margin-bottom: 80px;
 }
 //---------------------------------------------logo---------------------------------------------------
+.logo-wrapper{
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 16px;
+}
 .logo{
-  border: 8px solid $ultramatine-blue;
-  border-radius: 50px; 
-  box-sizing: border-box;
-  &:hover{
-    cursor: pointer;
-  }
-}
-.header-logo{
-  height: 40px;
-  width: 40px;
-  margin-right: 5px;
-}
-.logo-text{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 99%;
   font-family: RobotoRegular;
   font-style: normal;
   font-weight: 600;
   text-transform: uppercase;
-  &:hover{
-    cursor: pointer;
+  &::before{
+    position: relative;
+    content:'';
+    padding:0;
+    border: 8px solid $ultramatine-blue;
+    border-radius: 50px;
+    box-sizing: border-box;
   }
 }
-.header-logo-textbox{
-  width: 71px;
-  height: 30px;
-  overflow-wrap: break-word;
-}
-.header-logo-text{
+.header-logo{
   font-size: 14px;
   line-height: 14px;
   color: $charcoal-black;
-}
-.footer-logo-textbox{
-  width: 130px;
-  height: 54px;
-  overflow-wrap: break-word;
+  &::before{
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+  }
 }
 .footer-logo{
-  height: 70px;
-  width: 70px;
-  margin-right: 20px;
-}
-.footer-logo-text{
   font-size: 24px;
   line-height: 28px;
   color: $white;
+  &::before{
+    margin-right: 20px;
+    width: 70px;
+    height: 70px;
+  }
 }
 //---------------------------------------buttons/links------------------------------------------------
 .button{
@@ -327,13 +315,20 @@ a{
   background-color: $white;
   border-bottom: 1px solid rgba(0, 0, 0, .19);
 }
+.on-scroll-link{
+  background-color: $white;
+  border-bottom: 1px solid rgba(0, 0, 0, .19);
+}
 .invert{
-  filter: invert(1);
+  color: $charcoal-black;
+  img {
+    filter: invert(1);
+  }
 }
 //-----------------------------images/icons-----------------------------------
 .image{
-  min-width:100%;
+  max-width: 100%;
 }
 .banner-image{
-  min-width:90%;
+  min-width: 85%;
 }
