@@ -62,7 +62,8 @@ a{
 }
 .testimonial-block, 
 .models-block, 
-.consulting-block{
+.consulting-block,
+.what-we-do-block{
   @media (max-width: $lg) {
     margin-bottom: 120px;
   }
@@ -111,12 +112,26 @@ a{
   align-items: flex-start;
   justify-content: flex-start;
 }
-.testimonial-wrapper
+.testimonial-wrapper,
+.what-we-do-wrapper
 {
   @include inner-wrapper;
   flex-direction: row;
   @media screen and (max-width: $md){
     flex-flow: column;
+  }
+}
+.what-we-do-wrapper{
+  justify-content: space-between;
+  align-items: center;
+}
+.what-we-do-inner-wrapper{
+  width: 50%;
+  &-image{
+    margin-right: 124px;
+    @media screen and (min-width: $xl){
+      margin-right: 124px;
+    }
   }
 }
 .models-wrapper,
@@ -341,6 +356,9 @@ a{
 .mb-32{
   margin-bottom: 32px;
 }
+.mb-40{
+  margin-bottom: 40px;
+}
 //--------------------------------------------animation-----------------------------------------------
 .tr-bc{
   transition: background-color 1s ease;
@@ -363,6 +381,16 @@ a{
 .image{
   width: 100%;
 }
-.banner-image{
+.image-115{
   min-width: 115%;
+}
+.image-banner{
+  position: relative;
+  min-width: 110%;
+  left: 5%;
+}
+.image-what-we-do{
+  position: relative;
+  max-width: 130%;
+  left: -25%;
 }
