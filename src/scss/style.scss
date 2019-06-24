@@ -1,24 +1,35 @@
-@import "fonts.scss";
-@import "_variables.scss";
+@import '../../node_modules/normalize.css/normalize.css';
+@import 'fonts.scss';
+@import '_variables.scss';
 //-----------------------------------------general---------------------------------------------------
-html{
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
   height: 100%;
 }
-body{
+
+body {
   position: relative;
-  margin:0;
+  margin: 0;
   padding-bottom: 200px;
   min-height: 100%;
-  background: $white; 
+  background: $white;
 }
-p{
-  margin:0 0 40px 0;
+
+p {
+  margin: 0 0 40px 0;
 }
-a{
+
+a {
   color: $white;
 }
+
 //----------------------------------container/wrappers/blocks-----------------------------------------
-.container{
+.container {
   position: relative;
   height: inherit;
   width: 100%;
@@ -28,42 +39,44 @@ a{
   padding-right: 24px;
   margin: 0 auto;
 }
-.header, .footer{
-  z-index:20;
-  left: 0; 
+.header,
+.footer {
+  z-index: 20;
+  left: 0;
   right: 0;
   margin: 0;
 }
-.header{
+.header {
   position: sticky;
   height: 88px;
   top: 0px;
   transition: background-color 1s ease;
 }
-.footer{
-  position: absolute; 
-  height: 200px; 
+.footer {
+  position: absolute;
+  height: 200px;
 }
-.top-banner-block{
-  position:relative;
-  top:-88px;
-  @media screen and (max-width: $sm){
+.top-banner-block {
+  overflow: hidden;
+  position: relative;
+  top: -88px;
+  @media screen and (max-width: $sm) {
     margin-bottom: 81px;
   }
-  @media screen and (min-width: $sm+1px) and (max-width: $lg){
+  @media screen and (min-width: $sm+1px) and (max-width: $lg) {
     margin-bottom: 120px;
   }
-  @media screen and (min-width: $lg+1px) and (max-width: $xl){
+  @media screen and (min-width: $lg+1px) and (max-width: $xl) {
     margin-bottom: 88px;
   }
-  @media screen and (min-width: $xl+1px){
+  @media screen and (min-width: $xl+1px) {
     margin-bottom: 213px;
   }
 }
-.testimonial-block, 
-.models-block, 
+.testimonial-block,
+.models-block,
 .consulting-block,
-.what-we-do-block{
+.what-we-do-block {
   @media (max-width: $lg) {
     margin-bottom: 120px;
   }
@@ -71,65 +84,64 @@ a{
     margin-bottom: 200px;
   }
 }
-.header-wrapper, 
-.footer-wrapper{
+.header-wrapper,
+.footer-wrapper {
   height: inherit;
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
 }
-.footer-wrapper{
+.footer-wrapper {
   background: $charcoal-black;
 }
-.nav-wrapper{
+.nav-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-end;
 }
-.nav-link-wrapper{
+.nav-link-wrapper {
   margin: 0 49px 0 0;
 }
-.logo-wrapper{
+.logo-wrapper {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
 }
-.top-banner-wrapper{
+.top-banner-wrapper {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.top-banner-image-wrapper{
+.top-banner-image-wrapper {
   position: relative;
 }
-@mixin inner-wrapper{
+@mixin inner-wrapper {
   width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
 .testimonial-wrapper,
-.what-we-do-wrapper
-{
+.what-we-do-wrapper {
   @include inner-wrapper;
   flex-direction: row;
-  @media screen and (max-width: $md){
+  @media screen and (max-width: $md) {
     flex-flow: column;
   }
 }
-.what-we-do-wrapper{
+.what-we-do-wrapper {
   justify-content: space-between;
   align-items: center;
 }
-.what-we-do-inner-wrapper{
+.what-we-do-inner-wrapper {
   width: 50%;
-  &-image{
+  &-image {
     margin-right: 124px;
-    @media screen and (min-width: $xl){
+    @media screen and (min-width: $xl) {
       margin-right: 124px;
     }
   }
@@ -139,51 +151,51 @@ a{
   @include inner-wrapper;
   flex-direction: column;
 }
-.consulting-list-wrapper{
-  border-bottom: 1px solid rgba($light-gray, .4);
+.consulting-list-wrapper {
+  border-bottom: 1px solid rgba($light-gray, 0.4);
   margin-bottom: 48px;
 }
-.consulting-textblock-wrapper{
-  width:100%;
+.consulting-textblock-wrapper {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.consulting-textblock-text{
-  width:60%;
+.consulting-textblock-text {
+  width: 60%;
 }
 //--------------------------------------------navigation----------------------------------------------
-.nav-list{
+.nav-list {
   display: flex;
   justify-content: flex-end;
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-.nav-link{
+.nav-link {
   font-family: InterUIBold;
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;  
-  line-height: 24px;    
-  letter-spacing: 1px; 
-  text-transform: uppercase;  
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   text-decoration: none;
-  color: $white;  
+  color: $white;
 }
 //--------------------------------------------list/items----------------------------------------------
-.content-list{
+.content-list {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
   flex-direction: row;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
   @media (max-width: $md) {
     flex-direction: column;
   }
 }
-@mixin list-item{
+@mixin list-item {
   display: block;
   margin-bottom: 80px;
   @media (max-width: $md) {
@@ -195,20 +207,20 @@ a{
   @include list-item;
   width: calc(50% - 24px);
 }
-.list-item-33{
+.list-item-33 {
   @include list-item;
   width: calc(33% - 24px);
 }
 //---------------------------------------------logo---------------------------------------------------
-.logo-wrapper{
+.logo-wrapper {
   position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding-left: 16px;
 }
-.logo{
-  display:flex;
+.logo {
+  display: flex;
   flex-direction: row;
   align-items: center;
   max-width: 99%;
@@ -216,80 +228,80 @@ a{
   font-style: normal;
   font-weight: 600;
   text-transform: uppercase;
-  &::before{
+  &::before {
     position: relative;
-    content:'';
-    padding:0;
+    content: '';
+    padding: 0;
     border: 8px solid $ultramatine-blue;
     border-radius: 50px;
     box-sizing: border-box;
   }
 }
-.header-logo{
+.header-logo {
   font-size: 14px;
   line-height: 14px;
   color: $charcoal-black;
-  &::before{
+  &::before {
     margin-right: 5px;
     width: 40px;
     height: 40px;
   }
 }
-.footer-logo{
+.footer-logo {
   font-size: 24px;
   line-height: 28px;
   color: $white;
-  &::before{
+  &::before {
     margin-right: 20px;
     width: 70px;
     height: 70px;
   }
 }
 //---------------------------------------buttons/links------------------------------------------------
-.button{
+.button {
   display: flex;
   align-content: center;
   justify-content: center;
   align-self: flex-start;
-  min-width: 220px;  
+  min-width: 220px;
   min-height: 48px;
   border-radius: 8px;
   color: $white;
   background: $ultramatine-blue;
-  transition: background-color .2s ease;
-  &:hover{
+  transition: background-color 0.2s ease;
+  &:hover {
     background: $primary-blue;
   }
   @media (max-width: $sm) {
     width: 100%;
   }
 }
-.link{
+.link {
   text-decoration: none;
-  transition: all .3s cubic-bezier(.2, 0, 0, 1) !important;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) !important;
   z-index: 1;
   &:hover {
     color: $blue;
   }
 }
 //-------------------------------------text/fonts/margins/etc-----------------------------------------
-.title{
+.title {
   font-family: InterUIBold;
   font-style: normal;
   margin-right: 132px;
   color: $charcoal-black;
 }
-.main-title{
+.main-title {
   margin-right: 0;
-  @media screen and (max-width: $md){
+  @media screen and (max-width: $md) {
     font-size: 32px;
     line-height: 40px;
   }
-  @media screen and (min-width: $md+1px) and (max-width: $lg){
+  @media screen and (min-width: $md+1px) and (max-width: $lg) {
     font-size: 40px;
     line-height: 48px;
   }
-  @media screen and (min-width: $lg+1px) and (max-width: $xl){
+  @media screen and (min-width: $lg+1px) and (max-width: $xl) {
     font-size: 56px;
     line-height: 64px;
   }
@@ -298,18 +310,18 @@ a{
     line-height: 96px;
   }
 }
-.sub-title{
+.sub-title {
   @media screen and (max-width: $lg) {
     font-size: 32px;
     line-height: 40px;
   }
-  @media screen and (min-width: $lg+1){
+  @media screen and (min-width: $lg+1) {
     font-size: 40px;
     line-height: 48px;
   }
 }
-.sub-sub-title{
-  @media screen and (max-width: $lg){
+.sub-sub-title {
+  @media screen and (max-width: $lg) {
     font-size: 20px;
     line-height: 24px;
   }
@@ -318,78 +330,78 @@ a{
     line-height: 32px;
   }
 }
-.text{
+.text {
   font-family: InterUIRegular;
   font-style: normal;
   color: $gray;
-  @media screen and (max-width: $md){
+  @media screen and (max-width: $md) {
     font-size: 16px;
     line-height: 19px;
   }
-  @media screen and (min-width: $md+1){
+  @media screen and (min-width: $md+1) {
     font-size: 24px;
     line-height: 32px;
   }
 }
-.sub-text{
+.sub-text {
   font-size: 16px;
   line-height: 24px;
 }
-.sub-sub-text{
+.sub-sub-text {
   font-size: 16px;
   line-height: 19px;
 }
-.citation{
+.citation {
   margin-bottom: 32px !important;
   font-style: italic;
   color: $charcoal-black;
 }
-.no-m{
-  margin:0 !important;
+.no-m {
+  margin: 0 !important;
 }
-.mb-16{
+.mb-16 {
   margin-bottom: 16px;
 }
-.mb-24{
+.mb-24 {
   margin-bottom: 24px;
 }
-.mb-32{
+.mb-32 {
   margin-bottom: 32px;
 }
-.mb-40{
+.mb-40 {
   margin-bottom: 40px;
 }
 //--------------------------------------------animation-----------------------------------------------
-.tr-bc{
+.tr-bc {
   transition: background-color 1s ease;
 }
-.on-scroll-header{
+.on-scroll-header {
   background-color: $white;
-  border-bottom: 1px solid rgba(0, 0, 0, .19);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.19);
 }
-.on-scroll-link{
+.on-scroll-link {
   background-color: $white;
-  border-bottom: 1px solid rgba(0, 0, 0, .19);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.19);
 }
-.invert{
+.invert {
   color: $charcoal-black;
   img {
     filter: invert(1);
   }
 }
 //-----------------------------images/icons-----------------------------------
-.image{
+.image {
   width: 100%;
 }
-.image-115{
+.image-115 {
   min-width: 115%;
 }
-.image-banner{
+.image-banner {
   position: relative;
   min-width: 110%;
   left: 5%;
 }
-.image-what-we-do{
+.image-what-we-do {
   position: relative;
   max-width: 130%;
   left: -25%;

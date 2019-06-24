@@ -1,6 +1,6 @@
 import "../scss/style.scss";
 import $ from 'jquery';
-import './blog';
+import './index';
 
 $(document).ready(function () {
   var headerHeight = 88;
