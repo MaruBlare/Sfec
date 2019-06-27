@@ -72,7 +72,7 @@
   margin: 0;
   padding: 0;
 }
-.nav-link {
+@mixin nav-link{
   font-family: InterUIBold;
   font-style: normal;
   font-weight: 600;
@@ -81,7 +81,13 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
-  color: $white;
+}
+.nav-link {
+  @include nav-link;
+}
+.dark-nav-link {
+  @include nav-link;
+  color: $charcoal-black;
 }
 //---------------------------------------------logo---------------------------------------------------
 .logo-wrapper {
