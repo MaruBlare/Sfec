@@ -1,0 +1,49 @@
+.button {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-self: flex-start;
+  min-width: 220px;
+  min-height: 48px;
+  border-radius: 8px;
+  color: $white;
+  background: $ultramatine-blue;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background: $primary-blue;
+  }
+  @media screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+.rectangle-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .button {
+    display: none;
+  }
+  &::before{
+    position: absolute;
+    content: url(../img/icon/arrow-forward.png); 
+  }
+  @media screen and (max-width: $sm) {
+    .image {
+      display: none;
+    }
+    .button {
+      display: flex;
+    }
+    &::before {
+      content: ''; 
+    }
+  }
+}
+.link {
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) !important;
+  z-index: 1;
+  &:hover {
+    color: $blue;
+  }
+}

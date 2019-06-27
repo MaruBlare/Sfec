@@ -1,0 +1,9 @@
+.tr-bc {
+  transition: background-color 1s ease;
+}
+.invert {
+  color: $charcoal-black;
+  img {
+    filter: invert(1);
+  }
+}

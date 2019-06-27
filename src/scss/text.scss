@@ -1,0 +1,71 @@
+.title {
+  font-family: InterUIBold;
+  font-style: normal;
+  margin-right: 132px;
+  color: $charcoal-black;
+}
+.main-title {
+  margin-right: 0;
+  @media screen and (max-width: $md) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  @media screen and (min-width: $md+1px) and (max-width: $lg) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  @media screen and (min-width: $lg+1px) and (max-width: $xl) {
+    font-size: 56px;
+    line-height: 64px;
+  }
+  @media screen and (min-width: $xl) {
+    font-size: 80px;
+    line-height: 96px;
+  }
+}
+.sub-title {
+  @media screen and (max-width: $lg) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  @media screen and (min-width: $lg+1) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+.sub-sub-title {
+  @media screen and (max-width: $lg) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  @media screen and (min-width: $lg+1) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+.text {
+  font-family: InterUIRegular;
+  font-style: normal;
+  color: $gray;
+  @media screen and (max-width: $md) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  @media screen and (min-width: $md+1) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+.sub-text {
+  font-size: 16px;
+  line-height: 24px;
+}
+.sub-sub-text {
+  font-size: 16px;
+  line-height: 19px;
+}
+.citation {
+  margin-bottom: 32px !important;
+  font-style: italic;
+  color: $charcoal-black;
+}

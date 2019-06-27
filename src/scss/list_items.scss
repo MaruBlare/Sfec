@@ -1,0 +1,34 @@
+.content-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  @media (max-width: $md) {
+    flex-direction: column;
+  }
+}
+@mixin list-item {
+  display: block;
+  margin-bottom: 80px;
+  @media (max-width: $md) {
+    margin-bottom: 64px;
+    width: 100%;
+  }
+  .title{
+    margin-right: 0;
+  }
+}
+.list-item-50 {
+  @include list-item;
+  width: calc(50% - 24px);
+}
+.list-item-33 {
+  @include list-item;
+  width: calc(33% - 24px);
+}
+.list-item-25 {
+  @include list-item;
+  width: calc(25% - 24px);
+}

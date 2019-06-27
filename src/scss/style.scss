@@ -1,2 +1,12 @@
-@import "fonts.scss" 
+@import '../../node_modules/normalize.css/normalize.css';
+@import '_variables.scss';
+@import 'fonts.scss';
 
+@import 'general.scss';
+@import 'animation.scss';
+@import 'images.scss';
+@import 'text.scss';
+
+@import 'header_footer.scss';
+@import 'links_buttons.scss';
+@import 'list_items.scss';
