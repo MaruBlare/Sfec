@@ -54,13 +54,13 @@ module.exports = {
   plugins: [ 
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-        filename: 'style.css',
+      filename: 'style.css',
     }),
     new HtmlWebpackPlugin({
-        inject: false,
-        hash: true,
-        template: './src/index.html',
-        filename: 'index.html'
+      inject: false,
+      hash: true,
+      template: './src/index.html',
+      filename: 'index.html'
     }),
     new WebpackMd5Hash(),
     new FaviconsWebpackPlugin({
