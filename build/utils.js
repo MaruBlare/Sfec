@@ -12,10 +12,10 @@ exports.pages = function (env, folder = '') {
       return false;
 
     const viewName = view.split('.')[0];
-    const fileName = folder === '' ? `${viewName}/index.html` : `${folder}/${viewName}/index.html`;
+    const fileName = folder === '' ? `assets/views/${viewName}/index.html` : `assets/views/${folder}/${viewName}/index.html`;
     const options = {
       filename: fileName,
-      template: `src/${rootPagesFolderName}/${folder}/${view}`,
+      template: `${rootPagesFolderName}/${folder}/${view}`,
       inject: true
     };
 

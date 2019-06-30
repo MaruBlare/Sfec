@@ -8,13 +8,14 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const utils = require('./webpack/utils');
+const utils = require('./utils');
 
 module.exports = env => {
 
   return {
+    context: path.resolve(__dirname, '../src'),
     entry: {
-      main: './src/js/index.js'
+      main: './js/index.js'
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -24,8 +25,8 @@ module.exports = env => {
     resolve: {
       extensions: ['.js'],
       alias: {
-        source: path.resolve(__dirname, './src'), 
-        images: path.resolve(__dirname, './src/img'), 
+        source: path.resolve(__dirname, '../src'), 
+        images: path.resolve(__dirname, '../src/img'), 
         fonts: path.resolve(__dirname, '../src/fonts'), 
       }
     },
@@ -113,13 +114,13 @@ module.exports = env => {
       }),
       new HtmlWebpackPlugin({
         filename: 'index.html',
-        template: './src/index.html',
+        template: 'index.html',
         inject: true
       }),
       ...utils.pages(env),
       new WebpackMd5Hash(),
       new FaviconsWebpackPlugin({
-        logo:'./src/logo.png',
+        logo:'./logo.png',
         icons: {
           android: false,
           appleIcon: false,
