@@ -1,0 +1,17 @@
+.index-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 120px;
+  min-height: 100vh;
+  @media screen and (max-width: $md) {
+    padding: 0;
+  }
+}
+.index-logo{
+  margin-bottom: 16px;
+}
+.index-button {
+  width: 100%;
+}
