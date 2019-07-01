@@ -11,6 +11,9 @@
   height: 88px;
   top: 0px;
   transition: background-color 1s ease;
+  @media screen and (max-width: $sm) {
+    height: 56px;
+  }
 }
 .on-scroll-header {
   background-color: $white;
@@ -18,6 +21,7 @@
 }
 .footer {
   position: absolute;
+  bottom: 0;
   height: 200px;
   background: $charcoal-black;
 }
@@ -33,7 +37,6 @@
 .nav-wrapper {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: flex-end;
   :last-child {
     margin-right: 0;
@@ -68,9 +71,15 @@
 .nav-list {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: nowrap;
   list-style-type: none;
   margin: 0;
   padding: 0;
+  @media screen and (max-width: $md) {
+    :last-child {
+      display: none;
+    }
+  }
 }
 @mixin nav-link{
   font-family: InterUIBold;
@@ -95,6 +104,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  @media screen and (max-width: $sm) {
+    height: 56px;
+  }
 }
 .logo {
   display: flex;
@@ -112,6 +124,14 @@
     border: 8px solid $ultramatine-blue;
     border-radius: 50px;
     box-sizing: border-box;
+  }
+  &::after {
+    content: 'Project name';
+  }
+  @media screen and (max-width: $md) {
+    &::after {
+      content: '';
+    }
   }
 }
 .header-logo {
