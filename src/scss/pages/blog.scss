@@ -1,60 +1,6 @@
 //----------------------------------container/wrappers/blocks-----------------------------------------
-.blog-wrapper{
-  background-color: $back-gray;
-  margin: 0;
-  padding: 0;
-}
-.blog-articles-block{
+.blog-articles-block {
   padding-top: 172px;
-}
-.search-block-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  .title {
-    margin: 0;
-  }
-  @media screen and (max-width: $sm) {
-    margin-bottom: 24px;
-    flex-direction: column;
-    align-items: flex-start;
-    .title {
-      margin-bottom: 24px;
-    }
-  }
-  @media screen and (min-width: $sm+1) and (max-width: $md){
-    margin-bottom: 91px;
-    .title{
-      margin-right: 108px;
-    }
-  }
-  @media screen and (min-width: $md+1) {
-    margin-bottom: 88px;
-  }
-}
-//------------------------------search line-------------------------------
-.search-line-wrapper{
-  width: 75%;
-  &::before {
-    position: absolute;
-    font-family: 'FontAwesome';
-    content: '\f002';
-    color: $gray;
-    max-height: 24px;
-    max-height: 24px;
-    padding: 19px 0 19px 27px;
-  }
-  @media screen and (max-width: $sm) {
-    width: 100%;
-  }
-}
-.search-line {
-  width: 100%;
-  height: 56px;
-  border-radius: 8px;
-  background: $white;
-  padding-left: 64px;
 }
 //---------------------------------list/list-item-----------------------------------
 .blog-content-list {
@@ -64,7 +10,7 @@
     flex-direction: column;
   }
 }
-.list-item-textblock-wrapper{
+.list-item-textblock-wrapper {
   padding: 0 24px 0 24px;
 }
 .blog-list-item {
