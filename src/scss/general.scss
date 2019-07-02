@@ -36,12 +36,66 @@ a {
   padding-right: 24px;
   margin: 0 auto;
 }
-//--------------------------------wrapper-----------------------------------
+//--------------------------------wrappers-----------------------------------
 @mixin inner-wrapper {
   width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+}
+.page-wrapper {
+  background-color: $back-gray;
+  margin: 0;
+  padding: 0;
+}
+.search-block-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  .title {
+    margin: 0;
+  }
+  @media screen and (max-width: $sm) {
+    margin-bottom: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    .title {
+      margin-bottom: 24px;
+    }
+  }
+  @media screen and (min-width: $sm+1) and (max-width: $md){
+    margin-bottom: 91px;
+    .title{
+      margin-right: 108px;
+    }
+  }
+  @media screen and (min-width: $md+1) {
+    margin-bottom: 88px;
+  }
+}
+//------------------------------search line-------------------------------
+.search-line-wrapper {
+  width: 75%;
+  &::before {
+    position: absolute;
+    font-family: 'FontAwesome';
+    content: '\f002';
+    color: $gray;
+    max-height: 24px;
+    max-height: 24px;
+    padding: 19px 0 19px 27px;
+  }
+  @media screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+.search-line {
+  width: 100%;
+  height: 56px;
+  border-radius: 8px;
+  background: $white;
+  padding-left: 64px;
 }
 //-----------------------------------margins------------------------------
 .no-m {
