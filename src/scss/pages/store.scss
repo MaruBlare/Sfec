@@ -1,6 +1,11 @@
 .store-block {
   padding-top: 172px;
 }
+.store-wrapper {
+  [class^="list-item"] {
+    margin-bottom: 40px;
+  }
+}
 .store-content-list {
   display: flex;
   flex-direction: row;
@@ -33,4 +38,16 @@
 .store-inner-item {
   padding: 16px;
   border-bottom: 1px solid rgba($dark-gray, 0.7);
+  
+}
+.item-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  .image {
+    width: auto;
+    max-height: 120px;
+  }
 }
