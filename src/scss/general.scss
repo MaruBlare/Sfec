@@ -104,6 +104,10 @@ a {
 .no-m {
   margin: 0 !important;
 }
+.no-p-x {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
 .mb-16 {
   margin-bottom: 16px;
 }
@@ -123,4 +127,7 @@ a {
 }
 .d-none {
   display: none !important;
+}
+.no-b {
+  border: none !important;
 }
