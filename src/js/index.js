@@ -32,7 +32,7 @@ function setNav(navList, hamburgerMenu) {
     toggleNav(navList, hamburgerMenu, $('.header-wrapper'), true);
     if (!$('#shopping-cart-only').length) 
     {
-      $("<a href='#' class='link invert' id='shopping-cart-only'> <img class='shopping-cart' src='./img/icon/shopping_cart_24px.png' alt='shopping_cart'></a>")
+      $("<a href='checkout' class='link invert' id='shopping-cart-only'> <img class='shopping-cart' src='./img/icon/shopping_cart_24px.png' alt='shopping_cart'></a>")
         .insertAfter('.header-wrapper .logo-wrapper');
     }
   }

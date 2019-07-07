@@ -1,11 +1,6 @@
 .store-block {
   padding-top: 172px;
 }
-.store-wrapper {
-  [class^="list-item"] {
-    margin-bottom: 40px;
-  }
-}
 .store-content-list {
   display: flex;
   flex-direction: row;
@@ -13,21 +8,25 @@
     flex-direction: column;
   }
 }
-.store-list-item {
+.store-list-item {  
   text-align: center;
   background-color: $white;
   border-radius: 8px;
+  width: calc(33% - 48px);
+  margin-bottom: 40px;
   :last-child {
     border-bottom: none;
   }
   &:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.16);
   }
-  @media screen and (max-width: $md) {
-    width: calc(50% - 24px);
-  }
   @media screen and (max-width: $sm) {
     width: 100%;
+    margin-bottom: 16px;
+  }
+  @media screen and (max-width: $md) {
+    width: calc(50% - 24px);
+    margin-bottom: 32px;
   }
 }
 .list-item-textblock-wrapper {
@@ -38,16 +37,5 @@
 .store-inner-item {
   padding: 16px;
   border-bottom: 1px solid rgba($dark-gray, 0.7);
-  
 }
-.item-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  .image {
-    width: auto;
-    max-height: 120px;
-  }
-}
+
