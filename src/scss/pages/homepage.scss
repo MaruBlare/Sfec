@@ -1,0 +1,114 @@
+//--------------------------blocks/wrappers-------------------------------
+.top-banner-block {
+  overflow: hidden;
+  position: relative;
+  top: -88px;
+  @media screen and (max-width: $sm) {
+    margin-bottom: 81px;
+  }
+  @media screen and (min-width: $sm+1px) and (max-width: $lg) {
+    margin-bottom: 120px;
+  }
+  @media screen and (min-width: $lg+1px) and (max-width: $xl) {
+    margin-bottom: 88px;
+  }
+  @media screen and (min-width: $xl+1px) {
+    margin-bottom: 213px;
+  }
+}
+.testimonial-block,
+.models-block,
+.consulting-block,
+.what-we-do-block,
+.articles-block {
+  @media (max-width: $lg) {
+    margin-bottom: 120px;
+  }
+  @media (min-width: $lg+1) {
+    margin-bottom: 200px;
+  }
+}
+.top-banner-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-banner-image-wrapper {
+  position: relative;
+}
+.testimonial-wrapper,
+.what-we-do-wrapper {
+  @include inner-wrapper;
+  flex-direction: row;
+  @media screen and (max-width: $md) {
+    flex-flow: column;
+  }
+}
+.what-we-do-wrapper {
+  justify-content: space-between;
+  align-items: center;
+}
+.what-we-do-inner-wrapper {
+  width: 50%;
+  @media screen and (max-width: $md) {
+    width: 100%;
+  }
+  &-image{
+    margin-right: 67px;
+    @media screen and (max-width: $md) {
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
+    @media screen and (min-width: $xl) {
+      margin-right: 124px;
+    }
+  }
+}
+.models-wrapper,
+.consulting-wrapper,
+.articles-wrapper {
+  @include inner-wrapper;
+  flex-direction: column;
+}
+.consulting-list-wrapper {
+  border-bottom: 1px solid rgba($light-gray, 0.4);
+  margin-bottom: 48px;
+}
+.consulting-textblock-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.consulting-textblock-text {
+  width: 60%;
+}
+//----------------------------------list------------------------------------
+.consulting-list {
+  border-bottom: 1px solid rgba($light-gray, .4);
+  margin-bottom: 48px;
+}
+.articles-list {
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: $sm){
+    flex-direction: column;
+  }
+}
+//-------------------------------images------------------------------------
+.image-banner {
+  position: relative;
+  min-width: 110%;
+  left: 5%;
+}
+.image-what-we-do {
+  position: relative;
+  max-width: 130%;
+  left: -25%;
+  @media screen and (max-width: $md){
+    left:0;
+    max-width: 100%;
+  }
+}
