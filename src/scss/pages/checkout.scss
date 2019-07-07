@@ -1,0 +1,89 @@
+.checkout-block {
+  padding-top: 172px;
+}
+.checkout-wrapper {
+  [class^="list-item"] {
+    margin-bottom: 40px;
+  }
+}
+.checkout-list-item {
+  background-color: $white;
+  border-radius: 8px; 
+  :last-child {
+    border-bottom: none;
+  }
+  p {
+    text-align: center;
+  }  
+  &:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.16);
+  }
+  @media screen and (max-width: $md) {
+    width: 100%;
+  }
+}
+@mixin checkout-after-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: InterUIBold;
+  font-style: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: $white;
+}
+.checkout-inner-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  border-bottom: 1px solid rgba($dark-gray, 0.7);
+  &:first-child::after {
+    @include checkout-after-button;
+    position: absolute;
+    content: 'Remove';
+    top:0;
+    right: 0;
+    margin: 8px 8px 0 0;
+    height: 32px;
+    min-width: 25%;
+    background: $checkout-remove-button;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 14px;
+    border: none;
+  }
+}
+.item-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  .image {
+    width: auto;
+    max-height: 120px;
+  }
+}
+.checkout-pay-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 36px;
+}
+.checkout-pay-button {
+  width: 33%;
+  min-height: 48px;
+  background: $checkout-pay-button;
+  border: none;
+  border-radius: 8px;
+  &::after {
+    @include checkout-after-button;
+    content: 'Remove';
+    font-size: 14px;
+    line-height: 17px;
+  }
+  @media screen and (max-width: $md) {
+    width: 100%;
+  }
+}
