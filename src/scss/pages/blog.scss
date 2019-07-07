@@ -1,0 +1,32 @@
+//----------------------------------container/wrappers/blocks-----------------------------------------
+.blog-articles-block {
+  padding-top: 172px;
+}
+//---------------------------------list/list-item-----------------------------------
+.blog-content-list {
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: $sm) {
+    flex-direction: column;
+  }
+}
+.list-item-textblock-wrapper {
+  padding: 0 24px 0 24px;
+}
+.blog-list-item {
+  background-color: $white;
+  border-radius: 8px;
+  &:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.16);
+  }
+  @media screen and (max-width: $md) {
+    width: calc(50% - 24px);
+  }
+  @media screen and (max-width: $sm) {
+    width: 100%;
+  }
+}
+//---------------------------------other----------------------------------
+#dark-shopping-cart {
+  filter: invert(1);
+}
