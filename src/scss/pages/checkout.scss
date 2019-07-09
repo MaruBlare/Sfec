@@ -1,11 +1,17 @@
 .checkout-block {
   padding-top: 172px;
+  @media screen and (max-width: $sm) {
+    padding-top: 86px;
+  }
+  @media screen and (min-width: $sm+1) and (max-width: $md) {
+    padding-top: 129px;
+  }
 }
 .checkout-list-item {
   background-color: $white;
   border-radius: 8px; 
-  width: calc(33% - 48px);
-  margin-bottom: 40px;
+  width: calc(33% - 21.333px);
+  margin-bottom: 32px;
   :last-child {
     border-bottom: none;
   }
@@ -21,7 +27,7 @@
   }
   @media screen and (min-width: $sm+1) and (max-width: $md) {
     width: 100%;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 }
 @mixin checkout-after-button {
