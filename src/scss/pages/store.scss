@@ -3,6 +3,9 @@
   @media screen and (max-width: $sm) {
     padding-top: 86px;
   }
+  @media screen and (min-width: $sm+1) and (max-width: $md) {
+    padding-top: 129px;
+  }
 }
 .store-content-list {
   display: flex;
@@ -23,13 +26,13 @@
   &:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.16);
   }
-  @media screen and (max-width: $md) {
-    width: calc(50% - 12px);
-    margin-bottom: 24px;
-  }
   @media screen and (max-width: $sm) {
     width: 100%;
     margin-bottom: 16px;
+  }
+  @media screen and (min-width: $sm+1) and (max-width: $md) {
+    width: calc(50% - 12px);
+    margin-bottom: 24px;
   }
 }
 .list-item-textblock-wrapper {
