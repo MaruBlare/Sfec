@@ -60,7 +60,7 @@ a {
     margin: 0;
   }
   @media screen and (max-width: $sm) {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     flex-direction: column;
     align-items: flex-start;
     .title {
@@ -68,13 +68,13 @@ a {
     }
   }
   @media screen and (min-width: $sm+1) and (max-width: $md){
-    margin-bottom: 91px;
+    margin-bottom: 48px;
     .title{
       margin-right: 108px;
     }
   }
   @media screen and (min-width: $md+1) {
-    margin-bottom: 88px;
+    margin-bottom: 64px;
   }
 }
 //------------------------------search line-------------------------------

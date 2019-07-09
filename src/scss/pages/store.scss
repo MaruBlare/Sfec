@@ -1,5 +1,8 @@
 .store-block {
   padding-top: 172px;
+  @media screen and (max-width: $sm) {
+    padding-top: 86px;
+  }
 }
 .store-content-list {
   display: flex;
@@ -12,21 +15,21 @@
   text-align: center;
   background-color: $white;
   border-radius: 8px;
-  width: calc(33% - 48px);
-  margin-bottom: 40px;
+  width: calc(33% - 21.333px);
+  margin-bottom: 32px;
   :last-child {
     border-bottom: none;
   }
   &:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.16);
   }
+  @media screen and (max-width: $md) {
+    width: calc(50% - 12px);
+    margin-bottom: 24px;
+  }
   @media screen and (max-width: $sm) {
     width: 100%;
     margin-bottom: 16px;
-  }
-  @media screen and (max-width: $md) {
-    width: calc(50% - 24px);
-    margin-bottom: 32px;
   }
 }
 .list-item-textblock-wrapper {
