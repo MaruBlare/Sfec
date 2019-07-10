@@ -18,6 +18,7 @@
 }
 .rectangle-button {
   display: flex !important;
+  align-self: flex-start;
   align-items: center;
   justify-content: center;
   .button {

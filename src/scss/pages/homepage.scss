@@ -76,25 +76,84 @@
   border-bottom: 1px solid rgba($light-gray, 0.4);
   margin-bottom: 48px;
 }
+.consulting-item-textblock {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media screen and (min-width: $sm+1) and (max-width: $md) {
+    width: 50%;
+    align-self: center;
+  }   
+}
 .consulting-textblock-wrapper {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media screen and (max-width: $md) {
+    flex-direction: column;
+  }
 }
 .consulting-textblock-text {
   width: 60%;
+  @media screen and (max-width: $md) {
+    width: 100%;
+    margin-bottom: 24px;
+  }
 }
 //----------------------------------list------------------------------------
+@mixin homepage-grid-list {
+  grid-gap: 40px;
+  @media screen and (max-width: $lg) {
+    grid-gap: 32px;
+  }
+}
+.homepage-grid-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.models-list {
+  @include homepage-grid-list;
+  grid-template-columns: repeat(2, 1fr);
+  @media screen and (max-width: $md) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.models-item {
+  justify-content: space-between;
+  margin-bottom: 40px;
+  @media screen and (max-width: $md) {
+    margin-bottom: 32px;
+  }
+}
 .consulting-list {
+  grid-template-columns: repeat(3, 1fr);
   border-bottom: 1px solid rgba($light-gray, .4);
   margin-bottom: 48px;
+  @media screen and (max-width: $md) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.consulting-item {
+  @media screen and (min-width: $sm+1) and (max-width: $md) {
+    flex-direction: row;
+    .image {
+      width: calc(50% - 24px);
+      margin-right: 24px;
+    }
+  }
 }
 .articles-list {
-  display: flex;
-  flex-direction: row;
+  grid-template-columns: repeat(4, 1fr);
   @media screen and (max-width: $sm){
-    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @media screen and (min-width: $sm+1) and (max-width: 1100px+48px){
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 //-------------------------------images------------------------------------
