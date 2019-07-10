@@ -20,6 +20,7 @@
   border-radius: 8px;
   width: calc(33% - 21.333px);
   margin-bottom: 32px;
+  transition: box-shadow .3s ease;
   :last-child {
     border-bottom: none;
   }
