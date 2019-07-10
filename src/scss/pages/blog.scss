@@ -1,29 +1,36 @@
 //----------------------------------container/wrappers/blocks-----------------------------------------
 .blog-articles-block {
   padding-top: 172px;
+  padding-bottom: 40px;
+  @media screen and (max-width: $md) {
+    padding-top: 24px;
+  }
+  @media screen and (min-width: $md+1) and (max-width: $md) {
+    padding-top: 32px;
+  }
 }
 //---------------------------------list/list-item-----------------------------------
-.blog-content-list {
-  display: flex;
-  flex-direction: row;
+.blog-grid-list {
+  grid-template-columns: repeat(3, 1fr);
   @media screen and (max-width: $sm) {
-    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @media screen and (min-width: $sm+1) and (max-width: $md) {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .list-item-textblock-wrapper {
   padding: 0 24px 0 24px;
 }
 .blog-list-item {
+  width: 100%;
   background-color: $white;
   border-radius: 8px;
+  .image {
+    border-radius: 8px 8px 0 0;
+  }
   &:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.16);
-  }
-  @media screen and (max-width: $md) {
-    width: calc(50% - 24px);
-  }
-  @media screen and (max-width: $sm) {
-    width: 100%;
   }
 }
 //---------------------------------other----------------------------------
