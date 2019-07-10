@@ -1,17 +1,32 @@
 .store-block {
-  padding-top: 172px;
+  padding: 172px 0 172px 0;
   @media screen and (max-width: $sm) {
-    padding-top: 86px;
+    padding: 86px 0 86px 0;
   }
   @media screen and (min-width: $sm+1) and (max-width: $md) {
-    padding-top: 129px;
+    padding: 129px 0 129px 0;
   }
 }
-.store-content-list {
-  display: flex;
-  flex-direction: row;
+.store-grid-list {
+  grid-template-columns: repeat(3, 1fr);
   @media screen and (max-width: $sm) {
-    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @media screen and (min-width: $sm+1) and (max-width: $md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.store-grid-item {
+  width: 100%;
+  text-align: center;
+  background-color: $white;
+  border-radius: 8px;
+  transition: box-shadow .3s ease;
+  :last-child {
+    border-bottom: none;
+  }
+  &:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.16);
   }
 }
 .store-list-item {  
@@ -20,6 +35,7 @@
   border-radius: 8px;
   width: calc(33% - 21.333px);
   margin-bottom: 32px;
+  transition: box-shadow .3s ease;
   :last-child {
     border-bottom: none;
   }

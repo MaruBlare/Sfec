@@ -1,3 +1,14 @@
+.grid-list {
+  display: grid;
+  grid-gap: 32px;
+  max-width: 100%;
+  @media screen and (max-width: $sm) {
+    grid-gap: 16px;
+  }
+  @media screen and (min-width: $sm+1) and (max-width: $md) {
+    grid-gap: 24px;
+  }
+ }
 .content-list {
   display: flex;
   justify-content: space-between;
@@ -40,6 +51,7 @@
   overflow: hidden;
   .image {
     width: auto;
+    max-width: 100%;
     max-height: 120px;
   }
 }
