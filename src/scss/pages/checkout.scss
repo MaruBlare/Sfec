@@ -1,5 +1,6 @@
 .checkout-block {
   padding-top: 172px;
+  padding-bottom: 36px;
   @media screen and (max-width: $sm) {
     padding-top: 86px;
   }
@@ -7,38 +8,14 @@
     padding-top: 129px;
   }
 }
-.checkout-list-item {
-  background-color: $white;
-  border-radius: 8px; 
-  width: calc(33% - 21.333px);
-  margin-bottom: 32px;
-  :last-child {
-    border-bottom: none;
-  }
-  p {
-    text-align: center;
-  }  
-  &:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.16);
-  }
+.checkout-list-wrapper {
+  margin-bottom: 40px;
   @media screen and (max-width: $sm) {
-    width: 100%;
-    margin-bottom: 16px;
-  }
-  @media screen and (min-width: $sm+1) and (max-width: $md) {
-    width: 100%;
     margin-bottom: 24px;
   }
-}
-@mixin checkout-after-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: InterUIBold;
-  font-style: normal;
-  text-transform: uppercase;
-  cursor: pointer;
-  color: $white;
+  @media screen and (min-width: $sm+1) and (max-width: $md) {
+    margin-bottom: 32px;
+  }
 }
 .checkout-inner-item {
   position: relative;
@@ -46,20 +23,32 @@
   justify-content: center;
   padding: 16px;
   border-bottom: 1px solid rgba($dark-gray, 0.7);
-  &:first-child::after {
+}
+@mixin checkout-after-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: InterUIBold;
+  font-style: normal;
+  text-transform: uppercase;  
+  color: $white;
+}
+.checkout-remove-button {
+  position: absolute;
+  min-height: 32px;
+  min-width: 25%;
+  right: 2%;
+  top: 4%;
+  border-radius: 4px;
+  background: $checkout-remove-button;
+  &:hover {
+    background: $checkout-remove-button-hover;
+  }
+  &::after {
     @include checkout-after-button;
-    position: absolute;
     content: 'Remove';
-    top:0;
-    right: 0;
-    margin: 8px 8px 0 0;
-    height: 32px;
-    min-width: 25%;
-    background: $checkout-remove-button;
-    border-radius: 4px;
     font-size: 12px;
     line-height: 14px;
-    border: none;
   }
 }
 .checkout-pay-button-wrapper {
@@ -71,12 +60,14 @@
 .checkout-pay-button {
   width: 33%;
   min-height: 48px;
-  background: $checkout-pay-button;
-  border: none;
   border-radius: 8px;
+  background: $checkout-pay-button;
+  &:hover {
+    background: $checkout-pay-button-hover;
+  }
   &::after {
     @include checkout-after-button;
-    content: 'Remove';
+    content: 'Pay now';
     font-size: 14px;
     line-height: 17px;
   }
