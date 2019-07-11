@@ -7,8 +7,8 @@ $(document).ready(function () {
   var navWrapper = $("<nav class='nav-wrapper' id='navigation-list'></nav>");
   var hamburgerMenu = $("<div id='hamburger-menu'></div>");
 
-  navWrapper.load('../views/el-nav-list.html');
-  hamburgerMenu.load('../views/el-hamburger-menu.html');
+  navWrapper.load('../views/_nav-list.html');
+  hamburgerMenu.load('../views/_hamburger-menu.html');
 
   setNav(navWrapper, hamburgerMenu);
   $( window ).on('resize', function () {

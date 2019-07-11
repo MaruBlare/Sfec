@@ -80,7 +80,14 @@ module.exports = env => {
             limit: 10000,
             name: 'assets/videos/[name].[hash:7].[ext]'
           }
-        }
+        },
+        {
+          test: /\.pug$/,
+          loader: 'pug-loader',
+          options: {
+              pretty: true
+          }
+        },
       ]
     }, 
     optimization: {
@@ -114,7 +121,7 @@ module.exports = env => {
       }),
       new HtmlWebpackPlugin({
         filename: 'index.html',
-        template: 'index.html',
+        template: 'index.pug',
         inject: true
       }),
       ...utils.pages(env),

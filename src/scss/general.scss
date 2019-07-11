@@ -13,7 +13,6 @@ body {
   position: relative;
   margin: 0;
   padding-bottom: 200px;
-  min-height: 100%;
   background: $white;
 }
 
@@ -56,9 +55,6 @@ button {
   background-color: $back-gray;
   margin: 0;
   padding: 0;
-  @media screen and (min-width: $xl) {
-    min-height: 100vh;
-  }
 }
 .search-block-wrapper {
   display: flex;

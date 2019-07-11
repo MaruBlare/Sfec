@@ -1,0 +1,132 @@
+extends views/templates/general
+
+block title
+  title= 'Homepage'
+
+block header
+  include views/templates/header
+
+block footer
+  include views/templates/footer
+
+block content
+  .top-banner-block
+    .container
+      .top-banner-wrapper
+        div
+          p.title.main-title Excel Models Built by Investors, for Investors 
+          p.text.no-m Save time and win more deals with our products and consulting services.
+        .top-banner-image-wrapper
+          img.image-banner(src="./img/png/main-1x.png", alt="top-banner-image")
+  
+  .testimonial-block
+    .container
+      .testimonial-wrapper
+        p.title.sub-title Testimonials 
+          div
+            p.text.citation "Absolutely loved. I found it to be very lucidly explained, which helped me revise the basic modelling skills at a great pace. The drawings and quotes were the cherry on top!"
+            p.text.sub-sub-text
+              b Esha Puri
+              | , Associate, Deutsche Bank 
+              
+  
+  .models-block
+    .container
+      .models-wrapper
+        a#models
+          p.title.sub-title Models
+        .grid-list.models-list  
+          .homepage-grid-item.models-item
+            img.image.mb-32(src="./img/png/image-0.png", alt="model-0")
+            p.title.sub-sub-title.mb-16 Standard Acquisition Model
+            p.text.sub-text.mb-24 Multifamily Modeling’s basic apartment acquisition model for an existing building. Logical, straightforward, and easy to use, whether you’re new to underwriting or an experienced investor.
+            a.link(href='#')
+              button.button
+                span.sub-sub-text Learn More
+          .homepage-grid-item.models-item
+            img.image.mb-32(src="./img/png/image-1.png", alt="model-1")
+            p.title.sub-sub-title.mb-16 Value-Add/Renovation Model
+            p.text.sub-text.mb-24 A sophisticated value-add model that allows users to time individual unit renovations. This model combines granularity with a streamlined experience.
+            a.link(href='#')
+              button.button
+                span.sub-sub-text Learn More
+          .homepage-grid-item.models-item
+            img.image.mb-32(src="./img/png/image-2.png", alt="model-2")
+            p.title.sub-sub-title.mb-16 Condo Development Model
+            p.text.sub-text.mb-24 For the ground-up development of a condominium building or complex. Featuring a robust development schedule, allowing users to easily run a number of construction timing scenarios.
+            a.link(href='#')
+              button.button
+                span.sub-sub-text Learn More   
+          .homepage-grid-item.models-item
+            img.image.mb-32(src="./img/png/image-3.png", alt="model-3")
+            p.title.sub-sub-title.mb-16 Apartment Development Model
+            p.text.sub-text.mb-24 Our flagship development product featuring everything from a Back-of-the-Envelope analysis (allowing developers to get to a quick Yield-on-Cost) to our sophisticated timing and construction schedules.
+            a.link(href='#')
+              button.button
+                span.sub-sub-text Learn More       
+
+  .consulting-block
+    .container
+      .consulting-wrapper
+        a#consulting
+          p.title.sub-title Consulting
+        .grid-list.consulting-list  
+          .homepage-grid-item.consulting-item
+            img.image.mb-32(src="./img/png/consulting-0.png", alt="consulting-0")
+            .consulting-item-textblock
+              p.title.sub-sub-title.mb-16 Custom Models
+              p.text.sub-text.mb-24 Not all models look the same. Need something you don’t see here? We’ll build it for you.
+          .homepage-grid-item.consulting-item
+            img.image.mb-32(src="./img/png/consulting-1.png", alt="consulting-1")
+            .consulting-item-textblock
+              p.title.sub-sub-title.mb-16 Model Audits
+              p.text.sub-text.mb-24 Sometimes models just need a little love. We review spreadsheets on behalf of our clients in order to verify formulas and improve functionality.
+          .homepage-grid-item.consulting-item
+            img.image.mb-32(src="./img/png/consulting-2.png", alt="consulting-2")
+            .consulting-item-textblock
+              p.title.sub-sub-title.mb-16 Acqusitions Analysis
+              p.text.sub-text.mb-24 Do you run lean without the capital to invest in a full-time Acquisition Analyst? Don’t worry, we’ve got you covered.
+        .consulting-textblock-wrapper
+          .consulting-textblock-text
+            p.text.sub-text.no-m Multifamily Modeling, our aim is to provide our clients with high quality and meticulously honed consulting services to help them get to the right answer.
+          a.link(href='#')
+            button.button
+              span.sub-sub-text Learn More
+
+  .what-we-do-block
+    .container
+      .what-we-do-wrapper
+        .what-we-do-inner-wrapper.what-we-do-inner-wrapper-image
+          img.image-what-we-do(src="./img/png/what-we-do.png", alt="what-we-do-image")
+        .what-we-do-inner-wrapper
+          a#about
+            p.title.sub-title What We Do
+          p.text.sub-text.mb-16 We create straightforward, sophisticated, and aesthetically-pleasing financial models designed for the multifamily investment and development community. Our firm also offers consulting services to multifamily investors and developers throughout the US. See our Consulting page to learn more.</p>
+          p.text.sub-text.mb-40 To us, building financial models is an exercise in problem solving, and we are glad to sweat the details so you don’t have to.</p>
+          a.link(href='#')
+            button.button
+              span.sub-sub-text Learn More
+
+  .articles-block
+    .container
+      .articles-wrapper
+        p.title.sub-title Articles
+          div
+            .grid-list.articles-list
+              .homepage-grid-item
+                img.image.mb-32(src="./img/png/articles-0.png", alt="articles-0")
+                p.title.sub-sub-title.mb-16 Multifamily Ground-Up Development Model
+                p.text.sub-text.mb-24 The Development Models will appeal to developers both small and large. Meaning, a small 2-3 person shop to a private equity firm.
+              .homepage-grid-item
+                img.image.mb-32(src="./img/png/articles-1.png", alt="articles-1")
+                p.title.sub-sub-title.mb-16 Multifamily Ground-Up Development Model
+                p.text.sub-text.mb-24 The Development Models will appeal to developers both small and large. Meaning, a small 2-3 person shop to a private equity firm.
+              .homepage-grid-item
+                img.image.mb-32(src="./img/png/articles-0.png", alt="articles-0")
+                p.title.sub-sub-title.mb-16 Multifamily Ground-Up Development Model
+                p.text.sub-text.mb-24 The Development Models will appeal to developers both small and large. Meaning, a small 2-3 person shop to a private equity firm.
+              a.link.rectangle-button(href='#')
+                img.image(src="./img/png/rectangle.png", alt="button")        
+                button.button
+                  span.sub-sub-text Learn More
+                

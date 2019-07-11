@@ -1,0 +1,70 @@
+extends templates/general
+
+block title
+  title= 'Store'
+
+block header
+  include templates/header
+
+block footer
+  include templates/footer
+
+block content
+  .page-wrapper
+    .store-block
+      .container
+        .store-wrapper
+          .search-block-wrapper
+            p.title.sub-title Store
+            .search-line-wrapper
+              form(action="#")
+                input.search-line.text.sub-sub-text(placeholder="Search", type="text", name="search-line")
+          .grid-list.store-grid-list 
+            a(href="#") 
+              .store-grid-item
+                p.title.sub-text.no-m.store-inner-item Recommend
+                .store-inner-item.no-p-x
+                  span.item-info
+                    img.image.mb-16(src="./img/png/store-0.png", alt="store-item-0")
+                    p.text.sub-text.no-m Asus ZenFone Go ZB45
+                p.title.sub-text.no-m.store-inner-item $ 384.4
+            a(href="#")
+              .store-grid-item
+                p.title.sub-text.no-m.store-inner-item Bestseller
+                .store-inner-item.no-p-x
+                  span.item-info
+                    img.image.mb-16(src="./img/png/store-1.png", alt="store-item-1")
+                    p.text.sub-text.no-m Xiaomi Mi Band 2
+                p.title.sub-text.no-m.store-inner-item $ 384.4
+            a(href="#")
+              .store-grid-item
+                p.title.sub-text.no-m.store-inner-item Goods of the week
+                .store-inner-item.no-p-x
+                  span.item-info
+                    img.image.mb-16(src="./img/png/store-2.png", alt="store-item-2")
+                    p.text.sub-text.no-m LG 43UH610V
+                p.title.sub-text.no-m.store-inner-item $ 384.4
+            a(href="#")
+              .store-grid-item
+                p.title.sub-text.no-m.store-inner-item Recommend
+                .store-inner-item.no-p-x
+                  span.item-info
+                    img.image.mb-16(src="./img/png/store-3.png", alt="store-item-3")
+                    p.text.sub-text.no-m Electrolux EZB 52410 AK
+                p.title.sub-text.no-m.store-inner-item $ 384.4
+            a(href="#")
+              .store-grid-item
+                p.title.sub-text.no-m.store-inner-item Bestseller
+                .store-inner-item.no-p-x
+                  span.item-info
+                    img.image.mb-16(src="./img/png/store-4.png", alt="store-item-4")
+                    p.text.sub-text.no-m Beats Studio wireless
+                p.title.sub-text.no-m.store-inner-item $ 384.4
+            a(href="#")
+              .store-grid-item
+                p.title.sub-text.no-m.store-inner-item Recommend
+                .store-inner-item.no-p-x
+                  span.item-info
+                    img.image.mb-16(src="./img/png/store-5.png", alt="store-item-5")
+                    p.text.sub-text.no-m Nikon D3300 Kit
+                p.title.sub-text.no-m.store-inner-item $ 384.4
