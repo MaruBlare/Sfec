@@ -1,3 +1,8 @@
+@mixin grid-item {
+  border-radius: 8px;
+  background-color: $white;
+  transition: box-shadow .3s ease;
+}
 .grid-list {
   display: grid;
   grid-gap: 32px;
@@ -11,7 +16,7 @@
   @media screen and (min-width: $sm+1) and (max-width: $md) {
     grid-gap: 24px;
   }
- }
+}
 .item-info {
   display: flex;
   flex-direction: column;

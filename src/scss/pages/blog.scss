@@ -23,9 +23,8 @@
   padding: 0 24px 0 24px;
 }
 .blog-list-item {
+  @include grid-item;
   width: 100%;
-  background-color: $white;
-  border-radius: 8px;
   .image {
     border-radius: 8px 8px 0 0;
   }
