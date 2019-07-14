@@ -1,10 +1,11 @@
 .store-block {
-  padding: 172px 0 172px 0;
+  padding-top: 172px;
+  padding-bottom: 36px;
   @media screen and (max-width: $sm) {
-    padding: 86px 0 86px 0;
+    padding-top: 86px;
   }
   @media screen and (min-width: $sm+1) and (max-width: $md) {
-    padding: 129px 0 129px 0;
+    padding-top: 129px;
   }
 }
 .store-grid-list {
@@ -17,11 +18,9 @@
   }
 }
 .store-grid-item {
+  @include grid-item;
   width: 100%;
   text-align: center;
-  background-color: $white;
-  border-radius: 8px;
-  transition: box-shadow .3s ease;
   :last-child {
     border-bottom: none;
   }
