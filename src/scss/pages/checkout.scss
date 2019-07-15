@@ -24,15 +24,6 @@
   padding: 16px;
   border-bottom: 1px solid rgba($dark-gray, 0.7);
 }
-@mixin checkout-after-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: InterUIBold;
-  font-style: normal;
-  text-transform: uppercase;  
-  color: $white;
-}
 .checkout-remove-button {
   position: absolute;
   min-height: 32px;
@@ -45,7 +36,7 @@
     background: $checkout-remove-button-hover;
   }
   &::after {
-    @include checkout-after-button;
+    @include after-button;
     content: 'Remove';
     font-size: 12px;
     line-height: 14px;
@@ -66,7 +57,7 @@
     background: $checkout-pay-button-hover;
   }
   &::after {
-    @include checkout-after-button;
+    @include after-button;
     content: 'Pay now';
     font-size: 14px;
     line-height: 17px;

@@ -1,8 +1,11 @@
 import "../scss/style.scss";
-import $ from 'jquery';
 import './index';
+import * as store from './store'; 
+import $ from 'jquery';
 
 $(document).ready(function () {
+  var currentPage = window.location.pathname;
+
   var headerHeight = 88;
   var navWrapper = $("<nav class='nav-wrapper' id='navigation-list'></nav>");
   var hamburgerMenu = $("<div id='hamburger-menu'></div>");
@@ -24,6 +27,17 @@ $(document).ready(function () {
       $('nav .nav-link').removeClass( "invert" );
     }
   });
+
+  if (currentPage.match(/^\/store/)) {
+    window.onload = store.getProducts();
+    var loadButton = document.getElementById('load-button');
+    if (loadButton) {
+      loadButton.addEventListener("click", () => {
+        store.getProducts();
+      });
+    }
+  }
+
 });
 
 function setNav(navList, hamburgerMenu) {
@@ -59,3 +73,4 @@ function checkWindow() {
     return true;
   }
 }
+
