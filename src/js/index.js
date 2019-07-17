@@ -18,13 +18,26 @@ $(document).ready(function () {
     setNav(navWrapper, hamburgerMenu);
   });
 
+  var toTopButton = document.getElementById('totop-button');
+  if (toTopButton) {
+    toTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   $(window).on("scroll", function () {
     if ($(window).scrollTop() > headerHeight) {
       $('.header').addClass( "on-scroll-header" );
       $('nav .nav-link').addClass( "invert" );
+      if (toTopButton) {
+        toTopButton.classList.add("totop-button-active");
+      }
     } else {
       $('.header').removeClass( "on-scroll-header" );
       $('nav .nav-link').removeClass( "invert" );
+      if (toTopButton) {
+        toTopButton.classList.remove("totop-button-active");
+      }
     }
   });
 
@@ -40,7 +53,7 @@ $(document).ready(function () {
         store.getProducts();
       }
     });
-    
+
     document.getElementById('product-search-form').addEventListener('submit', store.searchProduct.bind(event));
   }
 });
