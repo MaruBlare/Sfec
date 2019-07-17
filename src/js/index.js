@@ -30,15 +30,17 @@ $(document).ready(function () {
 
   if (currentPage.match(/^\/store/)) {
     window.onload = store.getProducts();
-    var loadButton = document.getElementById('load-button');
-    if (loadButton) {
-      loadButton.addEventListener("click", store.getProducts);
-    }
-
-    //document.getElementById('product-search-line').addEventListener('oninput',(this) => {
-    ////  store.searchProduct();
-    //})
-    //document.getElementById('product-search-line').addEventListener('input', store.searchProduct.bind(event));
+    window.addEventListener('scroll', () => {
+      let scrollPosition = document.documentElement.scrollTop;
+      let windowHeight = window.innerHeight;
+      let bodyHeight = document.body.clientHeight;
+      let footerHeight = document.getElementById('footer').offsetHeight;
+      
+      if ( scrollPosition + windowHeight > bodyHeight - footerHeight) {
+        store.getProducts();
+      }
+    });
+    
     document.getElementById('product-search-form').addEventListener('submit', store.searchProduct.bind(event));
   }
 });

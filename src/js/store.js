@@ -103,7 +103,7 @@ function loadProductsOnPage(products, limit) {
   var productListDOM = document.getElementById('product-list');
 
   var offset = productListDOM.lastChild;
-  offset = offset == null || isUndefined(offset) ? 0 : Number(offset.id);
+  offset = offset == null || offset == undefined ? 0 : Number(offset.id);
 
   var slicedProductList = products.reduce((object, currentElement, currentIndex) => {
     if (currentIndex >= offset && currentIndex < offset+limit) {
@@ -113,7 +113,6 @@ function loadProductsOnPage(products, limit) {
   }, {});
 
   if (isEmptyObject(slicedProductList)) {
-    document.getElementById('load-button').remove();
     return;
   }
 
