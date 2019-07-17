@@ -16,9 +16,9 @@ block content
         .store-wrapper
           .search-block-wrapper
             p.title.sub-title Store
-            .search-line-wrapper
-              form(action="#")
-                input.search-line.text.sub-sub-text(placeholder="Search", type="text", name="search-line")
+            .search-line-wrapper#search-line-wrapper
+              form#product-search-form(action="#")
+                input#product-search-line.search-line.text.sub-sub-text(placeholder="Search", type="text", name="search-line")
           .store-list-wrapper 
             .grid-list.store-grid-list#product-list
           .store-load-button-wrapper

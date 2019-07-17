@@ -32,12 +32,15 @@ $(document).ready(function () {
     window.onload = store.getProducts();
     var loadButton = document.getElementById('load-button');
     if (loadButton) {
-      loadButton.addEventListener("click", () => {
-        store.getProducts();
-      });
+      loadButton.addEventListener("click", store.getProducts);
     }
-  }
 
+    //document.getElementById('product-search-line').addEventListener('oninput',(this) => {
+    ////  store.searchProduct();
+    //})
+    //document.getElementById('product-search-line').addEventListener('input', store.searchProduct.bind(event));
+    document.getElementById('product-search-form').addEventListener('submit', store.searchProduct.bind(event));
+  }
 });
 
 function setNav(navList, hamburgerMenu) {
