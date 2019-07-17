@@ -1,5 +1,3 @@
-import { isUndefined } from "util";
-
 const PRODUCTS_ON_PAGE = 6;
 
 export function getProducts() {
@@ -84,7 +82,6 @@ export function searchProduct(event) {
  
   console.log(JSON.stringify(matchedElements, null, 2));
 }
-
 
 function isEmptyObject(object) {
   for (var i in object) {
