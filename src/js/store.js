@@ -135,3 +135,7 @@ function loadProductsOnPage(products, limit) {
     productListDOM.append(element);
   };
 }
+
+export function showProductInfo(element) {
+  //TODO
+}

@@ -42,7 +42,7 @@ $(document).ready(function () {
   });
 
   if (currentPage.match(/^\/store/)) {
-    window.onload = store.getProducts();
+    store.getProducts();
     window.addEventListener('scroll', () => {
       let scrollPosition = document.documentElement.scrollTop;
       let windowHeight = window.innerHeight;
@@ -55,6 +55,20 @@ $(document).ready(function () {
     });
 
     document.getElementById('product-search-form').addEventListener('submit', store.searchProduct.bind(event));
+    var products = document.getElementById('product-list');
+    products.addEventListener('click',(event) => {
+      var target = event.target;
+      
+      while (target.tagName && target.tagName != 'A') {
+        target = target.parentNode;
+      }
+
+      if (target.tagName != 'A') {
+        return;
+      }
+
+      store.showProductInfo(target);
+    });
   }
 });
 
