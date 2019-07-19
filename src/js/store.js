@@ -79,24 +79,13 @@ export function searchProduct(event) {
     console.log('Nothing is found');
     return;
   }
- 
   console.log(JSON.stringify(matchedElements, null, 2));
+  showPopupWithProducts(matchedElements ,matchedElements);
 }
 
-function isEmptyObject(object) {
-  for (var i in object) {
-    if (object.hasOwnProperty(i)) {
-      return false;
-    }
-  }
-  return true;
-}
-
-function isMatched(element, regexp) {
-  if (!element || !element.match(regexp)) {
-    return false; 
-  }
-  return true;
+export function showProductInfo(element) {
+  var currentProductInfo = formProductObject(element);
+  console.log(currentProductInfo);
 }
 
 function loadProductsOnPage(products, limit) {
@@ -126,7 +115,7 @@ function loadProductsOnPage(products, limit) {
                           <div class='wrapper store-inner-item no-p-x'>
                             <span class='wrapper item-info'> 
                               <img class='image mb-16' id='image-path' src="${slicedProductList[product].imagePath}" alt="store-item">
-                              <p class='text sub-text no-m product-name' id='name'> ${slicedProductList[product].name} </p>
+                              <p class='text sub-text no-m product-name' id='product-name'> ${slicedProductList[product].name} </p>
                             </span>                            
                           </div>
                           <p class='title sub-text no-m store-inner-item' id='price'> ${slicedProductList[product].price}</p>
@@ -136,6 +125,33 @@ function loadProductsOnPage(products, limit) {
   };
 }
 
-export function showProductInfo(element) {
-  //TODO
+function formProductObject(element) {
+  var productInfo = [
+                      element.querySelector('#title'),
+                      element.querySelector('#image-path'),
+                      element.querySelector('#product-name'),
+                      element.querySelector('#price')
+                    ];
+
+  return productInfo.reduce((object, currentElement) => {
+    object[currentElement.id] = currentElement.innerText ? currentElement.innerText : currentElement.src;
+    return object;
+  }, {});
+
+}
+
+function isEmptyObject(object) {
+  for (var i in object) {
+    if (object.hasOwnProperty(i)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function isMatched(element, regexp) {
+  if (!element || !element.match(regexp)) {
+    return false; 
+  }
+  return true;
 }
