@@ -7,3 +7,24 @@
     filter: invert(1);
   }
 }
+.loader-wrapper {
+  display: none;
+  width: 100%;
+  padding: 24px;
+  &-active { 
+    display: flex;
+    justify-content: center;
+  }
+}
+.loader {
+  border: 16px solid $light-gray;
+  border-top: 16px solid $ultramatine-blue;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,13 +1,15 @@
 const PRODUCTS_ON_PAGE = 6;
 
 export function getProducts() {
+  document.getElementById('loader-wrapper').classList.add('loader-wrapper-active');
   fetch('./js/products.json')
   .then(
     response => {
       if (response.status == 200) {  
         response.json()
           .then(products => { loadProductsOnPage(products, PRODUCTS_ON_PAGE) }) ;
-      }
+          document.getElementById('loader-wrapper').classList.remove('loader-wrapper-active');
+        }
     },
     error => {
       console.log("Rejected: " + error); 
