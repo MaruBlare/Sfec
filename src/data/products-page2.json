@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Mostly viewed",
+    "imagePath": "./img/png/store-2.png",
+    "name": "AMD Radeon R4",
+    "price": "$ 384.4"
+  },
+  {
+    "title": "Recommend",
+    "imagePath": "./img/png/store-1.png",
+    "name": "MX Master 2S Wireless Laser Mouse",
+    "price": "$ 384.4"
+  },
+  {
+    "title": "New arrivals",
+    "imagePath": "./img/png/store-3.png",
+    "name": "Vernee Apollo Lite Case Flip",
+    "price": "$ 384.4"
+  },
+  {
+    "title": "Bestseller",
+    "imagePath": "./img/png/store-5.png",
+    "name": "MK850 Performance Wireless Keyboard",
+    "price": "$ 384.4"
+  },
+  {
+    "title": "Bestseller",
+    "imagePath": "./img/png/store-4.png",
+    "name": "MacBook 12 inch Retina Display",
+    "price": "$ 384.4"
+  },
+  {
+    "title": "Recommend",
+    "imagePath": "./img/png/store-0.png",
+    "name": "Surface Pro 6 with Black Keyboard",
+    "price": "$ 384.4"
+  }
+]
