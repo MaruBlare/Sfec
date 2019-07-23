@@ -8,6 +8,15 @@
     padding-top: 129px;
   }
 }
+.store-list-wrapper {
+  margin-bottom: 40px;
+  @media screen and (max-width: $sm) {
+    margin-bottom: 24px;
+  }
+  @media screen and (min-width: $sm+1) and (max-width: $md) {
+    margin-bottom: 32px;
+  }
+}
 .store-grid-list {
   grid-template-columns: repeat(3, 1fr);
   @media screen and (max-width: $sm) {
