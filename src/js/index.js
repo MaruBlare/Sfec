@@ -1,10 +1,10 @@
 import "../scss/style.scss";
-import './index';
-import * as store from './store'; 
 import $ from 'jquery';
 
+import './index';
+import './store'; 
+
 $(document).ready(function () {
-  var currentPage = window.location.pathname;
 
   var headerHeight = 88;
   var navWrapper = $("<nav class='nav-wrapper' id='navigation-list'></nav>");
@@ -40,24 +40,6 @@ $(document).ready(function () {
       }
     }
   });
-
-  if (currentPage.match(/^\/store/)) {
-    document.getElementById('product-search-form').addEventListener('submit', store.searchProduct.bind(event));
-    var products = document.getElementById('product-list');
-    products.addEventListener('click',(event) => {
-      var target = event.target;
-      
-      while (target.tagName && target.tagName != 'A') {
-        target = target.parentNode;
-      }
-
-      if (target.tagName != 'A') {
-        return;
-      }
-
-      store.showProductInfo(target);
-    });
-  }
 });
 
 function setNav(navList, hamburgerMenu) {
@@ -93,4 +75,3 @@ function checkWindow() {
     return true;
   }
 }
-

@@ -1,11 +1,11 @@
-const PRODUCTS_ON_PAGE = 6;
-const TOTAL_PAGE_COUNT = 4;
-
 var currentLocation = window.location.pathname;
 
 if (currentLocation.match(/^\/store/)) {
+  const TOTAL_PAGE_COUNT = 4;
+
   var windowHeight;
   var footerHeight;
+  var loadedItems = document.createElement('div');
 
   var spinner = `<div class='loader-wrapper loader-wrapper-active' id='loader-wrapper'>
                   <div class='loader'></div>
@@ -29,25 +29,45 @@ if (currentLocation.match(/^\/store/)) {
   }
 
   getProducts(pageCounter());
+  window.addEventListener('scroll', pageOnScroll);
 
-  window.addEventListener('scroll', () => {
-    let bodyHeight = document.body.clientHeight;
-    let scrollPosition = document.documentElement.scrollTop;
+  document.getElementById('product-search-form').addEventListener('submit', searchProduct.bind(event));
 
-    if (scrollPosition + windowHeight > bodyHeight - footerHeight) {
-      let pageNum = pageCounter();
-
-      if (pageNum > TOTAL_PAGE_COUNT) {
-        if (document.getElementById('loader-wrapper')) {
-          document.getElementById('loader-wrapper').remove();
-        };        
-        return;
-      }
-
-      document.getElementById('store-list-wrapper').innerHTML += spinner;
-      getProducts(pageNum);
+  var products = document.getElementById('product-list');
+  products.addEventListener('click',(event) => {
+    var target = event.target;
+    
+    while (target.tagName && target.tagName != 'A') {
+      target = target.parentNode;
     }
+
+    if (target.tagName != 'A') {
+      return;
+    }
+
+    showProductInfo(target);
   });
+}
+
+function pageOnScroll() {
+  let bodyHeight = document.body.clientHeight;
+  let scrollPosition = document.documentElement.scrollTop;
+
+  if (scrollPosition + windowHeight <= bodyHeight - footerHeight) {
+    return;
+  }
+
+  let pageNum = pageCounter();
+
+  if (pageNum > TOTAL_PAGE_COUNT) {
+    if (document.getElementById('loader-wrapper')) {
+      document.getElementById('loader-wrapper').remove();
+    };        
+    return;
+  }
+
+  document.getElementById('store-list-wrapper').innerHTML += spinner;
+  getProducts(pageNum);
 }
 
 function getProducts(pageNum) {
@@ -60,7 +80,9 @@ function getProducts(pageNum) {
               loadProducts(products); 
             });
 
-          document.getElementById('loader-wrapper').remove();
+          if (document.getElementById('loader-wrapper')) {
+            document.getElementById('loader-wrapper').remove();
+          }
         }
       },
       error => {
@@ -72,8 +94,9 @@ function loadProducts(products) {
   var productList = document.getElementById('product-list');
 
   for (let product in products) {
-    productList.innerHTML += render(products[product]);
-  };
+    loadedItems.innerHTML += render(products[product]);
+  };   
+  productList.innerHTML = loadedItems.innerHTML;
 }
 
 function render(product) {
@@ -91,18 +114,13 @@ function render(product) {
           </a>`;
 }
 
-export function searchProduct(event) {
+function searchProduct(event) {
   event.preventDefault();
 
-  var targetFormChilds = event.target.childNodes;
-  var searchPhrase;
-  for (let i = 0; i < targetFormChilds.length; i++) {
-    if (isMatched(targetFormChilds[i].className, /search-line/)) {
-      searchPhrase = targetFormChilds[i].value;
-      break;
-    }
-  }
-  if (searchPhrase.length < 2) {
+  var searchPhrase = document.getElementById('product-search-line').value;
+  if (!searchPhrase) {
+    document.getElementById('product-list').innerHTML = loadedItems.innerHTML;
+  } else if (searchPhrase.length < 2) {
     return;
   }
   searchPhrase = new RegExp(searchPhrase, "i");
@@ -110,57 +128,24 @@ export function searchProduct(event) {
   var itemsInfo = document.getElementsByClassName('item-info');
   var matchedElements = [];
 
-  Array.prototype.slice.call(itemsInfo).forEach((infoElements) => {
-    infoElements.childNodes.forEach((infoElement) => {
-      if (isMatched(infoElement.className, /product-name/)) {
-        if (infoElement.innerText.match(searchPhrase)) {
-          let parent = infoElements.parentElement;
-          while (!parent.className.match(/store-grid-item/)) {
-            parent = parent.parentElement;
-          }
-          matchedElements.push(parent);
-        }
-      };
-    });
+  var productItems = loadedItems.querySelectorAll('.store-grid-item');
+  var matchedElements = '';
+
+  [...productItems].forEach((productItem) => {
+    let productName = productItem.querySelector('#product-name').innerHTML;
+
+    if ( isMatched(productName, searchPhrase) ) {
+      matchedElements += productItem.outerHTML;
+    }
   });
-
-  var counter = 0;
-  var matchedElements = matchedElements.reduce((object, currentElement) => {
-    let tempObject = {};
-
-    currentElement.childNodes.forEach((innerElement) => {
-      if (!isMatched(innerElement.className, /wrapper/) && innerElement.className) {
-        tempObject[innerElement.id || 'someProperty'] = innerElement.innerText;
-      }
-      else if (innerElement.className) {
-        let itemInfo = innerElement.childNodes;
-        for (let i = 0; i < itemInfo.length; i++) {
-          if (isMatched(itemInfo[i].className, /wrapper/)) {
-            itemInfo = itemInfo[i];
-            break;
-          }
-        }
-
-        itemInfo.childNodes.forEach((itemInfoElement) => {
-          if (itemInfoElement.className) {
-            tempObject[itemInfoElement.id || 'someProperty'] = itemInfoElement.tagName == 'IMG' ? itemInfoElement.src : itemInfoElement.innerText;
-          }
-        });
-      }
-    });
-    object[`product  ${counter++}`] = tempObject;
-    return object;
-  }, {});
-
-  if (isEmptyObject(matchedElements)) {
-    console.log('Nothing is found');
-    return;
-  }
-  console.log(JSON.stringify(matchedElements, null, 2));
-  showPopupWithProducts(matchedElements, matchedElements);
+  
+  window.removeEventListener('scroll', pageOnScroll);
+  document.getElementById('product-list').innerHTML = matchedElements ? 
+                                                      matchedElements : 
+                                                      `<p class='text'>  Nothing is found </p>`;
 }
 
-export function showProductInfo(element) {
+function showProductInfo(element) {
   var currentProductInfo = formProductObject(element);
   console.log(currentProductInfo);
 }
