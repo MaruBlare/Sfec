@@ -1,10 +1,9 @@
 import "../scss/style.scss";
 import $ from 'jquery';
-import React from "react";
-import ReactDOM from "react-dom";
 
 import './index';
 import './store'; 
+import './Сheckout.js';
 
 $(document).ready(function () {
 
@@ -42,6 +41,11 @@ $(document).ready(function () {
       }
     }
   });
+
+  if (currentLocation.match(/^\/checkout/)) {
+    
+    //ReactDOM.render(<App />, document.getElementById("root"));
+  } 
 });
 
 function setNav(navList, hamburgerMenu) {
