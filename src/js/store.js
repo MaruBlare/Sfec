@@ -8,6 +8,14 @@ if (currentLocation.match(/^\/store/)) {
   var footerHeight;
   var loadedItems = document.createElement('div');
 
+  var cart;
+  if ( isInLocalStorage('cart') ) {
+    cart = [];
+  }
+  else {
+    cart = localStorage.getItem('cart');
+  }
+
   var spinner = `<div class='loader-wrapper loader-wrapper-active' id='loader-wrapper'>
                   <div class='loader'></div>
                 </div>`;
@@ -47,6 +55,7 @@ if (currentLocation.match(/^\/store/)) {
     }
 
     showProductInfo(target);
+    addToCart( formProductObject(target).id );
   });
 }
 
@@ -171,6 +180,19 @@ function formProductObject(element) {
   }, {});
 }
 
+function addToCart(productId) {
+  if ( isInLocalStorage('cart') ) {
+    var cart = JSON.parse(localStorage.getItem('cart'));            
+
+    if ( !(cart.indexOf(productId) === -1) )  {
+      return;
+    }
+
+    cart.push(productId);
+    localStorage.setItem('cart', JSON.stringify(cart));
+  } 
+} 
+
 function isEmptyObject(object) {
   for (var i in object) {
     if (object.hasOwnProperty(i)) {
@@ -186,3 +208,12 @@ function isMatched(element, regexp) {
   }
   return true;
 }
+
+function isInLocalStorage(item) {
+  if (localStorage && localStorage.getItem(item)) { 
+    return true;
+  }
+  return false;
+}
+
+

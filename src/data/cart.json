@@ -1,0 +1,170 @@
+[
+  {
+    "id" : "0",
+    "title": "Recommend",
+    "imagePath": "./img/png/store-0.png",
+    "name": "Asus ZenFone Go ZB45",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "1",
+    "title": "Bestseller",
+    "imagePath": "./img/png/store-1.png",
+    "name": "Xiaomi Mi Band 2",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "2",
+    "title": "Goods of the week",
+    "imagePath": "./img/png/store-2.png",
+    "name": "LG 43UH610V",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "3",
+    "title": "Recommend",
+    "imagePath": "./img/png/store-3.png",
+    "name": "Electrolux EZB 52410 AK",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "4",
+    "title": "Bestseller",
+    "imagePath": "./img/png/store-4.png",
+    "name": "Beats Studio wireless",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "5",
+    "title": "Recommend",
+    "imagePath": "./img/png/store-5.png",
+    "name": "Nikon D3300 Kit",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "6",
+    "title": "Mostly viewed",
+    "imagePath": "./img/png/store-2.png",
+    "name": "AMD Radeon R4",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "7",
+    "title": "Recommend",
+    "imagePath": "./img/png/store-1.png",
+    "name": "MX Master 2S Wireless Laser Mouse",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "8",
+    "title": "New arrivals",
+    "imagePath": "./img/png/store-3.png",
+    "name": "Vernee Apollo Lite Case Flip",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "9",
+    "title": "Bestseller",
+    "imagePath": "./img/png/store-5.png",
+    "name": "MK850 Performance Wireless Keyboard",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "10",
+    "title": "Bestseller",
+    "imagePath": "./img/png/store-4.png",
+    "name": "MacBook 12 inch Retina Display",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "11",
+    "title": "Recommend",
+    "imagePath": "./img/png/store-0.png",
+    "name": "Surface Pro 6 with Black Keyboard",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "12",
+    "title": "Recommend",
+    "imagePath": "./img/png/store-2.png",
+    "name": "MX 2S Laser Mouse",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "13",
+    "title": "Bestseller",
+    "imagePath": "./img/png/store-0.png",
+    "name": "Cyber Power Systems",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "14",
+    "title": "New arrivals",
+    "imagePath": "./img/png/store-5.png",
+    "name": "Apple Headphone Adapter",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "15",
+    "title": "Recommend",
+    "imagePath": "./img/png/store-3.png",
+    "name": "Refurbished Apple Pencil",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "16",
+    "title": "Bestseller",
+    "imagePath": "./img/png/store-2.png",
+    "name": "Pro Camera Indoor Wireless",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "17",
+    "title": "Top 100",
+    "imagePath": "./img/png/store-1.png",
+    "name": "Google Nest Cam Outdoor",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "18",
+    "title": "Best buy",
+    "imagePath": "./img/png/store-1.png",
+    "name": "Wi-Fi Video Doorbell",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "19",
+    "title": "New arrivals",
+    "imagePath": "./img/png/store-2.png",
+    "name": "Mini WiFi Smart Plug",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "20",
+    "title": "New arrivals",
+    "imagePath": "./img/png/store-3.png",
+    "name": "Nest Indoor Security Camera",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "21",
+    "title": "Recommend",
+    "imagePath": "./img/png/store-0.png",
+    "name": "Hue White and Color Ambiance",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "22",
+    "title": "Bestseller",
+    "imagePath": "./img/png/store-3.png",
+    "name": "Smart Color Thermostat",
+    "price": "$ 384.4"
+  },
+  {
+    "id" : "23",
+    "title": "Mostly viewed",
+    "imagePath": "./img/png/store-5.png",
+    "name": "Smart Touch-Screen Thermostat",
+    "price": "$ 384.4"
+  }
+]
