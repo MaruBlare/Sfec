@@ -1,8 +1,9 @@
+const TOTAL_PAGE_COUNT = 4;
+
 var currentLocation = window.location.pathname;
 
 if (currentLocation.match(/^\/store/)) {
-  const TOTAL_PAGE_COUNT = 4;
-
+  
   var windowHeight;
   var footerHeight;
   var loadedItems = document.createElement('div');
@@ -100,7 +101,7 @@ function loadProducts(products) {
 }
 
 function render(product) {
-  return `<a href='#'>
+  return `<a>
             <div class='store-grid-item'>
               <p class='title sub-text no-m store-inner-item' id='title'> ${product.title} </p>
               <div class='wrapper store-inner-item no-p-x'>
