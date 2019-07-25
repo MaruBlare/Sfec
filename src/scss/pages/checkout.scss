@@ -8,15 +8,6 @@
     padding-top: 129px;
   }
 }
-.checkout-list-wrapper {
-  margin-bottom: 40px;
-  @media screen and (max-width: $sm) {
-    margin-bottom: 24px;
-  }
-  @media screen and (min-width: $sm+1) and (max-width: $md) {
-    margin-bottom: 32px;
-  }
-}
 .checkout-inner-item {
   position: relative;
   display: flex;
@@ -47,6 +38,13 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 36px;
+  margin-top: 40px;
+  @media screen and (max-width: $sm) {
+    margin-top: 24px;
+  }
+  @media screen and (min-width: $sm+1) and (max-width: $md) {
+    margin-top: 32px;
+  }
 }
 .checkout-pay-button {
   width: 33%;

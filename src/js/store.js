@@ -13,7 +13,7 @@ if (currentLocation.match(/^\/store/)) {
     cart = [];
   }
   else {
-    cart = localStorage.getItem('cart');
+    cart = JSON.parse(localStorage.getItem('cart'));
   }
 
   var spinner = `<div class='loader-wrapper loader-wrapper-active' id='loader-wrapper'>
@@ -181,6 +181,14 @@ function formProductObject(element) {
 }
 
 function addToCart(productId) {
+  const confirmAdding = () => {
+    return confirm('Do you want to add this product to your cart?');
+  }
+
+  if ( !confirmAdding() ) {
+    return;
+  }
+
   if ( isInLocalStorage('cart') ) {
     var cart = JSON.parse(localStorage.getItem('cart'));            
 
