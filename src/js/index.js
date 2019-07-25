@@ -41,11 +41,6 @@ $(document).ready(function () {
       }
     }
   });
-
-  if (currentLocation.match(/^\/checkout/)) {
-    
-    //ReactDOM.render(<App />, document.getElementById("root"));
-  } 
 });
 
 function setNav(navList, hamburgerMenu) {

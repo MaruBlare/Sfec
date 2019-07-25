@@ -102,7 +102,7 @@ function loadProducts(products) {
 
 function render(product) {
   return `<a>
-            <div class='store-grid-item'>
+            <div class='store-grid-item' id='${product.id}'>
               <p class='title sub-text no-m store-inner-item' id='title'> ${product.title} </p>
               <div class='wrapper store-inner-item no-p-x'>
                 <span class='wrapper item-info'> 
@@ -153,6 +153,7 @@ function showProductInfo(element) {
 
 function formProductObject(element) {
   var productInfo = [
+    element.querySelector('.store-grid-item'),
     element.querySelector('#title'),
     element.querySelector('#image-path'),
     element.querySelector('#product-name'),
@@ -160,7 +161,12 @@ function formProductObject(element) {
   ];
 
   return productInfo.reduce((object, currentElement) => {
-    object[currentElement.id] = currentElement.innerText ? currentElement.innerText : currentElement.src;
+    if( isMatched(currentElement.className, /store-grid-item/) ) {
+      object['id'] = currentElement.id;
+    }
+    else {
+      object[currentElement.id] = currentElement.innerText ? currentElement.innerText : currentElement.src;
+    }
     return object;
   }, {});
 }

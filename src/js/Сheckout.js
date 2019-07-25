@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+var currentLocation = window.location.pathname;
+
 function CheckoutPoductList(props) {
   return (
     <div>
@@ -12,27 +14,19 @@ function CheckoutPoductList(props) {
 class Checkout extends React.Component {
   constructor(props) {
     super(props);
-    this.currentPage = props.currentPage;
   }
 
   render() {
-    const isCheckout = this.currentPage.match(/^\/checkout/);
-
-    if (this.currentPage.match(/^\/checkout/)) {
-      productList = <CheckoutPoductList />;
-    }
-    else {
-      productList = null;
-    }
     return (
-      {productList}
+      <CheckoutPoductList/>
     )
   }
 
 };
 
-
-ReactDOM.render(
-  <Checkout currentPage={window.location.pathname} />,
-  document.getElementById('content-container')
-);
+if (currentLocation.match(/^\/checkout/)) {
+  ReactDOM.render(
+    <Checkout/>,
+    document.getElementById('content-container')
+  );
+}
