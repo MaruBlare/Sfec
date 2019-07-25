@@ -45,5 +45,11 @@
     "webpack-dev-server": "^3.7.1",
     "webpack-md5-hash": "^0.0.6"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
+  }
 }
