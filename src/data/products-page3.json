@@ -1,35 +1,41 @@
 [
   {
+    "id" : "12",
     "title": "Recommend",
     "imagePath": "./img/png/store-2.png",
     "name": "MX 2S Laser Mouse",
     "price": "$ 384.4"
   },
   {
+    "id" : "13",
     "title": "Bestseller",
     "imagePath": "./img/png/store-0.png",
     "name": "Cyber Power Systems",
     "price": "$ 384.4"
   },
   {
+    "id" : "14",
     "title": "New arrivals",
     "imagePath": "./img/png/store-5.png",
     "name": "Apple Headphone Adapter",
     "price": "$ 384.4"
   },
   {
+    "id" : "15",
     "title": "Recommend",
     "imagePath": "./img/png/store-3.png",
     "name": "Refurbished Apple Pencil",
     "price": "$ 384.4"
   },
   {
+    "id" : "16",
     "title": "Bestseller",
     "imagePath": "./img/png/store-2.png",
     "name": "Pro Camera Indoor Wireless",
     "price": "$ 384.4"
   },
   {
+    "id" : "17",
     "title": "Top 100",
     "imagePath": "./img/png/store-1.png",
     "name": "Google Nest Cam Outdoor",

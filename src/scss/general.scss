@@ -137,3 +137,52 @@ button {
 .no-b {
   border: none !important;
 }
+#popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($charcoal-black, .3);
+  z-index: 100;
+}
+.popup {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+  background-color: $white;
+  border-radius: 16px;
+  .button {
+    max-width: 50%;
+  }
+}
+.popup-buttons-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  & button:first-child {
+    margin-right: 16px;
+  }
+  @media screen and (max-width: $md) {
+    display: flex;
+    flex-direction: column;
+    & button {
+      align-self: center;
+      min-height: 24px;
+      min-width: 16px;
+    }
+    & button:first-child {
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
+  }
+}

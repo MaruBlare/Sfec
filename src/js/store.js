@@ -8,6 +8,14 @@ if (currentLocation.match(/^\/store/)) {
   var footerHeight;
   var loadedItems = document.createElement('div');
 
+  var cart;
+  if ( !isInLocalStorage('cart') ) {
+    localStorage.setItem('cart', JSON.stringify([]));
+  } 
+  else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+  }
+
   var spinner = `<div class='loader-wrapper loader-wrapper-active' id='loader-wrapper'>
                   <div class='loader'></div>
                 </div>`;
@@ -47,6 +55,7 @@ if (currentLocation.match(/^\/store/)) {
     }
 
     showProductInfo(target);
+    addToCart( formProductObject(target).id );
   });
 }
 
@@ -102,7 +111,7 @@ function loadProducts(products) {
 
 function render(product) {
   return `<a>
-            <div class='store-grid-item'>
+            <div class='store-grid-item' id='${product.id}'>
               <p class='title sub-text no-m store-inner-item' id='title'> ${product.title} </p>
               <div class='wrapper store-inner-item no-p-x'>
                 <span class='wrapper item-info'> 
@@ -153,6 +162,7 @@ function showProductInfo(element) {
 
 function formProductObject(element) {
   var productInfo = [
+    element.querySelector('.store-grid-item'),
     element.querySelector('#title'),
     element.querySelector('#image-path'),
     element.querySelector('#product-name'),
@@ -160,10 +170,36 @@ function formProductObject(element) {
   ];
 
   return productInfo.reduce((object, currentElement) => {
-    object[currentElement.id] = currentElement.innerText ? currentElement.innerText : currentElement.src;
+    if( isMatched(currentElement.className, /store-grid-item/) ) {
+      object['id'] = currentElement.id;
+    }
+    else {
+      object[currentElement.id] = currentElement.innerText ? currentElement.innerText : currentElement.src;
+    }
     return object;
   }, {});
 }
+
+function addToCart(productId) {
+  const confirmAdding = () => {
+    return confirm('Do you want to add this product to your cart?');
+  }
+
+  if ( !confirmAdding() ) {
+    return;
+  }
+
+  if ( isInLocalStorage('cart') ) {
+    var cart = JSON.parse(localStorage.getItem('cart'));            
+
+    if ( !(cart.indexOf(productId) === -1) )  {
+      return;
+    }
+
+    cart.push(productId);
+    localStorage.setItem('cart', JSON.stringify(cart));
+  } 
+} 
 
 function isEmptyObject(object) {
   for (var i in object) {
@@ -180,3 +216,12 @@ function isMatched(element, regexp) {
   }
   return true;
 }
+
+function isInLocalStorage(item) {
+  if (localStorage && localStorage.getItem(item)) { 
+    return true;
+  }
+  return false;
+}
+
+

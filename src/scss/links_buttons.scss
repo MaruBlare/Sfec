@@ -91,6 +91,9 @@
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) !important;
   z-index: 1;
+  &-dark {
+    color: $charcoal-black !important;
+  }
   &:hover {
     color: $blue;
   }

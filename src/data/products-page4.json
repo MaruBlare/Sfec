@@ -1,35 +1,41 @@
 [
   {
+    "id" : "18",
     "title": "Best buy",
     "imagePath": "./img/png/store-1.png",
     "name": "Wi-Fi Video Doorbell",
     "price": "$ 384.4"
   },
   {
+    "id" : "19",
     "title": "New arrivals",
     "imagePath": "./img/png/store-2.png",
     "name": "Mini WiFi Smart Plug",
     "price": "$ 384.4"
   },
   {
+    "id" : "20",
     "title": "New arrivals",
     "imagePath": "./img/png/store-3.png",
     "name": "Nest Indoor Security Camera",
     "price": "$ 384.4"
   },
   {
+    "id" : "21",
     "title": "Recommend",
     "imagePath": "./img/png/store-0.png",
     "name": "Hue White and Color Ambiance",
     "price": "$ 384.4"
   },
   {
+    "id" : "22",
     "title": "Bestseller",
     "imagePath": "./img/png/store-3.png",
     "name": "Smart Color Thermostat",
     "price": "$ 384.4"
   },
   {
+    "id" : "23",
     "title": "Mostly viewed",
     "imagePath": "./img/png/store-5.png",
     "name": "Smart Touch-Screen Thermostat",

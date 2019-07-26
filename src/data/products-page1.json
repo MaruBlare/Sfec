@@ -1,35 +1,41 @@
 [
   {
+    "id" : "0",
     "title": "Recommend",
     "imagePath": "./img/png/store-0.png",
     "name": "Asus ZenFone Go ZB45",
     "price": "$ 384.4"
   },
   {
+    "id" : "1",
     "title": "Bestseller",
     "imagePath": "./img/png/store-1.png",
     "name": "Xiaomi Mi Band 2",
     "price": "$ 384.4"
   },
   {
+    "id" : "2",
     "title": "Goods of the week",
     "imagePath": "./img/png/store-2.png",
     "name": "LG 43UH610V",
     "price": "$ 384.4"
   },
   {
+    "id" : "3",
     "title": "Recommend",
     "imagePath": "./img/png/store-3.png",
     "name": "Electrolux EZB 52410 AK",
     "price": "$ 384.4"
   },
   {
+    "id" : "4",
     "title": "Bestseller",
     "imagePath": "./img/png/store-4.png",
     "name": "Beats Studio wireless",
     "price": "$ 384.4"
   },
   {
+    "id" : "5",
     "title": "Recommend",
     "imagePath": "./img/png/store-5.png",
     "name": "Nikon D3300 Kit",
