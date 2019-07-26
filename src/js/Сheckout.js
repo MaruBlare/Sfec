@@ -13,6 +13,7 @@ function RemoveButton(props) {
     if ( !confirmDeletion() ) {
       return;
     }
+
     var cart = props.cart.filter(productId => productId !== props.id);
     localStorage.setItem('cart', JSON.stringify(cart));
 
@@ -29,9 +30,27 @@ function RemoveButton(props) {
   );
 }
 
-function PayButton(props) {
+function PayButton() {
   function makePayment(e) {
-    //TODO
+    const confirmPayment = () => {
+      return confirm('Do you want to buy products in your cart?');
+    }
+    const getRandomArbitrary = (min, max) => {
+      return Math.random() * (max - min) + min;
+    }
+
+    if ( !confirmPayment() ) {
+      return;
+    }
+    if ( getRandomArbitrary(0,1) < 1/2 ) {
+      alert('Oops, check your balance please.');
+      return;
+    }
+
+    localStorage.setItem('cart', JSON.stringify([]));
+
+    alert('Thanks for your payment.');
+    window.location.reload();
   }
 
   return (
@@ -77,7 +96,7 @@ function ProductList(props) {
           <p className='text'>Time to visit our <a href='store' className='link link-dark'>store</a> page</p>
         }
       </div> 
-      { products.length &&
+      { products.length > 0 &&
         <div className='checkout-pay-button-wrapper'>
           <PayButton/>
         </div>

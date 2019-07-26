@@ -9,9 +9,9 @@ if (currentLocation.match(/^\/store/)) {
   var loadedItems = document.createElement('div');
 
   var cart;
-  if ( isInLocalStorage('cart') ) {
-    cart = [];
-  }
+  if ( !isInLocalStorage('cart') ) {
+    localStorage.setItem('cart', JSON.stringify([]));
+  } 
   else {
     cart = JSON.parse(localStorage.getItem('cart'));
   }
