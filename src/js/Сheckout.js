@@ -6,7 +6,9 @@ var currentLocation = window.location.pathname;
 
 function Popup(props) { //TODO
   return (
-    <div className='popup'>
+    <div id='#popup-container'>
+      <div className='popup'> 
+      </div>
     </div>
   );
 }
