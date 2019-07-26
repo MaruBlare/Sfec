@@ -4,6 +4,13 @@ import products from '../data/cart.json';
 
 var currentLocation = window.location.pathname;
 
+function Popup(props) { //TODO
+  return (
+    <div className='popup'>
+    </div>
+  );
+}
+
 function RemoveButton(props) {
   function removeProduct(e) {
     const confirmDeletion = () => {
