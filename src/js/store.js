@@ -7,7 +7,6 @@ var spinner = `<div class='loader-wrapper loader-wrapper-active' id='loader-wrap
                 <div class='loader'></div>
               </div>`;
 
-
 window.onload = () => {
   windowHeight = window.innerHeight;
   footerHeight = document.getElementById('footer').offsetHeight;
@@ -16,15 +15,15 @@ window.addEventListener('scroll', pageOnScroll);
 
 document.getElementById('product-search-form').addEventListener('submit', searchProduct.bind(event));
 
-var products = document.getElementById('product-list');
-products.addEventListener('click',(event) => {
+var listWrapper = document.getElementById('store-list-wrapper');
+listWrapper.addEventListener('click',(event) => {
   var target = event.target;
-  
-  while (target.tagName && target.tagName != 'A') {
+
+  while (target.tagName && target.className != 'store-grid-item-wrapper') {
     target = target.parentNode;
   }
 
-  if (target.tagName != 'A') {
+  if (target.className != 'store-grid-item-wrapper') {
     return;
   }
 
@@ -97,15 +96,18 @@ function pageOnScroll() {
 
 function loadProducts(products) {
   var productList = document.getElementById('product-list');
+  var listToAppend = '';
 
   for (let product in products) {
-    loadedItems.innerHTML += render(products[product]);
-  };   
-  productList.innerHTML = loadedItems.innerHTML;
+    listToAppend += render(products[product]);
+  }; 
+
+  loadedItems.innerHTML += listToAppend;
+  productList.insertAdjacentHTML('beforeend', listToAppend);
 }
 
 function render(product) {
-  return `<a>
+  return `<div class='store-grid-item-wrapper'>
             <div class='store-grid-item' id='${product.id}'>
               <p class='title sub-text no-m store-inner-item' id='title'> ${product.title} </p>
               <div class='wrapper store-inner-item no-p-x'>
@@ -116,7 +118,7 @@ function render(product) {
               </div>
               <p class='title sub-text no-m store-inner-item' id='price'> ${product.price}</p>
             </div>
-          </a>`;
+          </div>`;
 }
 
 function searchProduct(event) {

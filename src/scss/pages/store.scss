@@ -26,6 +26,9 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+.store-grid-item-wrapper {
+  cursor: pointer;
+}
 .store-grid-item {
   @include grid-item;
   width: 100%;
