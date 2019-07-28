@@ -1,12 +1,18 @@
+const currentLocation = window.location.pathname;
+const pages = ['store',
+               'Checkout'];
+
 import "../scss/style.scss";
 import $ from 'jquery';
 
 import './index';
-import './store'; 
-import './Сheckout.js';
+pages.forEach(page => {
+  if ( currentLocation.match(new RegExp(page, 'i')) ) {
+    require(`./${page}`);
+  }
+});
 
 $(document).ready(function () {
-
   var headerHeight = 88;
   var navWrapper = $("<nav class='nav-wrapper' id='navigation-list'></nav>");
   var hamburgerMenu = $("<div id='hamburger-menu'></div>");

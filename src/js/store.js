@@ -1,83 +1,55 @@
 const TOTAL_PAGE_COUNT = 4;
 
-var currentLocation = window.location.pathname;
+var windowHeight;
+var footerHeight;
+var loadedItems = document.createElement('div');
+var spinner = `<div class='loader-wrapper loader-wrapper-active' id='loader-wrapper'>
+                <div class='loader'></div>
+              </div>`;
 
-if (currentLocation.match(/^\/store/)) {
+
+window.onload = () => {
+  windowHeight = window.innerHeight;
+  footerHeight = document.getElementById('footer').offsetHeight;
+};
+window.addEventListener('scroll', pageOnScroll);
+
+document.getElementById('product-search-form').addEventListener('submit', searchProduct.bind(event));
+
+var products = document.getElementById('product-list');
+products.addEventListener('click',(event) => {
+  var target = event.target;
   
-  var windowHeight;
-  var footerHeight;
-  var loadedItems = document.createElement('div');
-
-  var cart;
-  if ( !isInLocalStorage('cart') ) {
-    localStorage.setItem('cart', JSON.stringify([]));
-  } 
-  else {
-    cart = JSON.parse(localStorage.getItem('cart'));
+  while (target.tagName && target.tagName != 'A') {
+    target = target.parentNode;
   }
 
-  var spinner = `<div class='loader-wrapper loader-wrapper-active' id='loader-wrapper'>
-                  <div class='loader'></div>
-                </div>`;
-
-  window.onload = () => {
-    windowHeight = window.innerHeight;
-    footerHeight = document.getElementById('footer').offsetHeight;
-  };
-
-  var pageCounter = countPage();
-  function countPage() {
-    var currentPage = 0;
-  
-    return () => {
-      if (currentPage <= TOTAL_PAGE_COUNT) {
-        currentPage++;
-      }
-      return currentPage;
-    };
+  if (target.tagName != 'A') {
+    return;
   }
 
-  getProducts(pageCounter());
-  window.addEventListener('scroll', pageOnScroll);
+  showProductInfo(target);
+  addToCart( formProductObject(target).id );
+});
 
-  document.getElementById('product-search-form').addEventListener('submit', searchProduct.bind(event));
-
-  var products = document.getElementById('product-list');
-  products.addEventListener('click',(event) => {
-    var target = event.target;
-    
-    while (target.tagName && target.tagName != 'A') {
-      target = target.parentNode;
-    }
-
-    if (target.tagName != 'A') {
-      return;
-    }
-
-    showProductInfo(target);
-    addToCart( formProductObject(target).id );
-  });
+var cart;
+if ( !isInLocalStorage('cart') ) {
+  localStorage.setItem('cart', JSON.stringify([]));
+} 
+else {
+  cart = JSON.parse(localStorage.getItem('cart'));
 }
 
-function pageOnScroll() {
-  let bodyHeight = document.body.clientHeight;
-  let scrollPosition = document.documentElement.scrollTop;
+var pageCounter = countPage();
+function countPage() {
+  var currentPage = 0;
 
-  if (scrollPosition + windowHeight <= bodyHeight - footerHeight) {
-    return;
-  }
-
-  let pageNum = pageCounter();
-
-  if (pageNum > TOTAL_PAGE_COUNT) {
-    if (document.getElementById('loader-wrapper')) {
-      document.getElementById('loader-wrapper').remove();
-    };        
-    return;
-  }
-
-  document.getElementById('store-list-wrapper').innerHTML += spinner;
-  getProducts(pageNum);
+  return () => {
+    if (currentPage <= TOTAL_PAGE_COUNT) {
+      currentPage++;
+    }
+    return currentPage;
+  };
 }
 
 function getProducts(pageNum) {
@@ -98,6 +70,29 @@ function getProducts(pageNum) {
       error => {
         console.log("Rejected: " + error);
       });
+}
+
+getProducts(pageCounter());
+
+function pageOnScroll() {
+  let bodyHeight = document.body.clientHeight;
+  let scrollPosition = document.documentElement.scrollTop;
+
+  if (scrollPosition + windowHeight <= bodyHeight - footerHeight) {
+    return;
+  }
+
+  let pageNum = pageCounter();
+
+  if (pageNum > TOTAL_PAGE_COUNT) {
+    if (document.getElementById('loader-wrapper')) {
+      document.getElementById('loader-wrapper').remove();
+    };        
+    return;
+  }
+
+  document.getElementById('store-list-wrapper').innerHTML += spinner;
+  getProducts(pageNum);
 }
 
 function loadProducts(products) {
@@ -223,5 +218,3 @@ function isInLocalStorage(item) {
   }
   return false;
 }
-
-

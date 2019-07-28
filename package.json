@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.6.0",
@@ -45,11 +46,5 @@
     "webpack-dev-server": "^3.7.1",
     "webpack-md5-hash": "^0.0.6"
   },
-  "dependencies": {},
-  "babel": {
-    "presets": [
-      "@babel/env",
-      "@babel/react"
-    ]
-  }
+  "dependencies": {}
 }

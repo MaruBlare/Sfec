@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import products from '../data/cart.json';
 
-var currentLocation = window.location.pathname;
+var cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function Popup(props) { //TODO
   return (
@@ -145,11 +145,7 @@ class Checkout extends React.Component {
   }
 };
 
-if (currentLocation.match(/^\/checkout/)) {
-  var cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-  ReactDOM.render(
-    <Checkout products={products} cart={cart}/>,
-    document.getElementById('content-container')
-  );
-}
+ReactDOM.render(
+  <Checkout products={products} cart={cart}/>,
+  document.getElementById('content-container')
+);
